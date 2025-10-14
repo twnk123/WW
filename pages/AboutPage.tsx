@@ -228,16 +228,16 @@ const AboutPage: React.FC = () => {
             <motion.div layout className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
               <AnimatePresence>
                 {[
-                  { name: 'architect', role: 'specification agent', src: `${import.meta.env.BASE_URL}agents/architect.png` },
-                  { name: 'cashier', role: 'payments agent', src: `${import.meta.env.BASE_URL}agents/cashier.png` },
-                  { name: 'conveyor', role: 'CI-CD agent', src: `${import.meta.env.BASE_URL}agents/conveyor.png` },
-                  { name: 'foundry', role: 'backend / API agent', src: `${import.meta.env.BASE_URL}agents/foundry.png` },
-                  { name: 'gatekeeper', role: 'auth / roles agent', src: `${import.meta.env.BASE_URL}agents/gatekeeper.png` },
-                  { name: 'ledger', role: 'database agent', src: `${import.meta.env.BASE_URL}agents/ledger.png` },
-                  { name: 'lighthouse', role: 'SEO / AEO agent', src: `${import.meta.env.BASE_URL}agents/lighthouse.png` },
-                  { name: 'scout', role: 'research agent', src: `${import.meta.env.BASE_URL}agents/scout.png` },
-                  { name: 'smith', role: 'front‑end agent', src: `${import.meta.env.BASE_URL}agents/smith.png` },
-                  { name: 'stylist', role: 'UI/UX agent', src: `${import.meta.env.BASE_URL}agents/stylist.png` },
+                  { name: 'architect', role: 'specification agent', src: `${import.meta.env.BASE_URL}agents/architect.webp` },
+                  { name: 'cashier', role: 'payments agent', src: `${import.meta.env.BASE_URL}agents/cashier.webp` },
+                  { name: 'conveyor', role: 'CI-CD agent', src: `${import.meta.env.BASE_URL}agents/conveyor.webp` },
+                  { name: 'foundry', role: 'backend / API agent', src: `${import.meta.env.BASE_URL}agents/foundry.webp` },
+                  { name: 'gatekeeper', role: 'auth / roles agent', src: `${import.meta.env.BASE_URL}agents/gatekeeper.webp` },
+                  { name: 'ledger', role: 'database agent', src: `${import.meta.env.BASE_URL}agents/ledger.webp` },
+                  { name: 'lighthouse', role: 'SEO / AEO agent', src: `${import.meta.env.BASE_URL}agents/lighthouse.webp` },
+                  { name: 'scout', role: 'research agent', src: `${import.meta.env.BASE_URL}agents/scout.webp` },
+                  { name: 'smith', role: 'front‑end agent', src: `${import.meta.env.BASE_URL}agents/smith.webp` },
+                  { name: 'stylist', role: 'UI/UX agent', src: `${import.meta.env.BASE_URL}agents/stylist.webp` },
                 ].map(member => (
                   <motion.div key={member.name} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3, ease: [0.22,1,0.36,1] as const }} className="text-center">
                     <div className="rounded-xl p-1 bg-white/60 border border-line shadow-sm inline-block w-full">

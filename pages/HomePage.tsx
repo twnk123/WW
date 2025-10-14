@@ -200,7 +200,7 @@ const HomePage: React.FC = () => {
             <ScrollReveal delay={0.1}>
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center">
                 <img
-                  src={`${import.meta.env.BASE_URL}agents/stylist.png`}
+                  src={`${import.meta.env.BASE_URL}agents/stylist.webp`}
                   alt="(stylist) UI/UX agent"
                   className="w-full h-full object-cover rounded-md"
                 />
@@ -210,7 +210,7 @@ const HomePage: React.FC = () => {
             <ScrollReveal delay={0.2}>
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center mt-12">
                 <img
-                  src={`${import.meta.env.BASE_URL}agents/smith.png`}
+                  src={`${import.meta.env.BASE_URL}agents/smith.webp`}
                   alt="(smith) front-end agent"
                   className="w-full h-full object-cover rounded-md"
                 />
@@ -220,7 +220,7 @@ const HomePage: React.FC = () => {
             <ScrollReveal delay={0.3}>
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center">
                 <img
-                  src={`${import.meta.env.BASE_URL}agents/foundry.png`}
+                  src={`${import.meta.env.BASE_URL}agents/foundry.webp`}
                   alt="(foundry) AI agent integration"
                   className="w-full h-full object-cover rounded-md"
                 />
@@ -230,7 +230,7 @@ const HomePage: React.FC = () => {
             <ScrollReveal delay={0.4}>
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center mt-12">
                 <img
-                  src={`${import.meta.env.BASE_URL}agents/conveyor.png`}
+                  src={`${import.meta.env.BASE_URL}agents/conveyor.webp`}
                   alt="(conveyor) CI-CD agent"
                   className="w-full h-full object-cover rounded-md"
                 />
