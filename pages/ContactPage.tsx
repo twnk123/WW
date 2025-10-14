@@ -242,7 +242,7 @@ const ContactPage: React.FC = () => {
                                 disabled={status === 'sending'}
                                 whileHover={status !== 'sending' ? { scale: 1.02 } : {}}
                                 whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
-                                className="w-full bg-gradient-to-r from-accent to-purple-500 hover:from-accent/90 hover:to-purple-500/90 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full bg-gradient-to-r from-accent to-purple-500 hover:from-accent/90 hover:to-purple-500/90 text-text-active px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {status === 'sending' ? (
                                     <>

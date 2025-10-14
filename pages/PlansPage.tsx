@@ -12,18 +12,11 @@ import Seo from '../components/Seo';
 import { plans as basePlans } from '../data/plans';
 
 const PlansPage: React.FC = () => {
-    const [billingCycle, setBillingCycle] = useState<'project' | 'monthly'>('project');
     const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
     const { t, language } = useLanguage();
-    
+
     // Get translated plans
     const translatedPlans = plansTranslations[language].plans;
-    const billingToggle = t('plans.billingToggle') as {
-        project: string;
-        monthly: string;
-        projectSuffix: string;
-        monthlySuffix: string;
-    };
     const heroHeading = t('plans.heroHeading') as string;
     const planButtons = t('plans.planCard') as { cta: string };
     const comparison = t('plans.comparison') as {
@@ -136,39 +129,10 @@ const PlansPage: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-lg md:text-xl text-text-active max-w-3xl mx-auto mb-8"
+                            className="text-lg md:text-xl text-text-active max-w-3xl mx-auto"
                         >
                             {t('plans.subtitle')}
                         </motion.p>
-
-                        {/* Billing Toggle */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="inline-flex items-center gap-4 p-1 bg-gradient-to-r from-accent/10 to-purple-500/10 border border-accent/20 rounded-full"
-                        >
-                            <button
-                                onClick={() => setBillingCycle('project')}
-                                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                                    billingCycle === 'project' 
-                                        ? 'bg-accent text-white' 
-                                        : 'text-text-active hover:bg-accent/10'
-                                }`}
-                            >
-                                {billingToggle.project}
-                            </button>
-                            <button
-                                onClick={() => setBillingCycle('monthly')}
-                                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                                    billingCycle === 'monthly' 
-                                        ? 'bg-accent text-white' 
-                                        : 'text-text-active hover:bg-accent/10'
-                                }`}
-                            >
-                                {billingToggle.monthly}
-                            </button>
-                        </motion.div>
                     </motion.div>
                 </div>
 
@@ -239,23 +203,9 @@ const PlansPage: React.FC = () => {
 
                                         {/* Price */}
                                         <div className="mb-6">
-                                            <AnimatePresence mode="wait">
-                                                <motion.div
-                                                    key={billingCycle}
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: -10 }}
-                                                    transition={{ duration: 0.2 }}
-                                                    className="flex items-baseline gap-2"
-                                                >
-                                                    <span className="font-display text-4xl font-bold tracking-tight">
-                                                        {billingCycle === 'project' ? plan.price : `€${Math.round(parseInt(plan.price.slice(1)) * 0.15)}`}
-                                                    </span>
-                                                    <span className="text-accent text-xs font-medium">
-                                                        {billingCycle === 'project' ? billingToggle.projectSuffix : billingToggle.monthlySuffix}
-                                                    </span>
-                                                </motion.div>
-                                            </AnimatePresence>
+                                            <span className="font-display text-4xl font-bold tracking-tight">
+                                                {plan.price}
+                                            </span>
                                         </div>
 
                                         {/* Features - Show all features */}
@@ -300,23 +250,13 @@ const PlansPage: React.FC = () => {
                                         </ul>
 
                                         {/* CTA Button */}
-                                        <Button 
-                                            to="/contact" 
+                                        <Button
+                                            to="/contact"
                                             variant={isPremium ? 'primary' : isPopular ? 'secondary' : 'secondary'}
                                             className="w-full"
                                         >
                                             {planButtons.cta}
                                         </Button>
-
-                                        {/* Hover effect glow */}
-                                        {hoveredPlan === index && (
-                                            <motion.div
-                                                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/10 to-purple-500/10 pointer-events-none"
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
-                                            />
-                                        )}
                                     </motion.div>
                                 </motion.div>
                             );
