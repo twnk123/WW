@@ -1,0 +1,117 @@
+import type { Plan, AddOn } from '../types';
+
+// Whiteweaver Generous Pricing (EUR)
+export const plans: Plan[] = [
+  {
+    name: 'Starter',
+    price: '€250',
+    description: 'Perfect for: "I just need customers to find me online"',
+    features: [
+      '2-page website (Homepage + Contact page)',
+      'Your business info, logo, photos, and description',
+      'Contact form that sends to your email',
+      'Click-to-call & WhatsApp buttons',
+      'Shows up in Google searches',
+      '1 round of changes after we show you',
+      'Ready in 24 hours',
+      'Optional Extra (+€90): Get found in AI searches - Makes your site appear when people ask ChatGPT or Google AI about businesses like yours',
+    ],
+  },
+  {
+    name: 'Core',
+    price: '€500',
+    description: 'Perfect for: "I want a real website that gets me customers"',
+    features: [
+      '5-page website (Home, About, Services, Contact, plus one more)',
+      'Contact form sends directly to your email',
+      'FAQ section to answer common questions',
+      'Pick 2 special features:',
+      '  • Google Maps with directions',
+      '  • Photo gallery/portfolio',
+      '  • Video showcase',
+      '  • Business calendar/hours',
+      '  • Customer testimonials section',
+      '  • Services/pricing table',
+      'Found on Google + Maps + AI search',
+      '2 rounds of changes included',
+      'Ready in 1-2 days',
+      'FREE: Link to your Google Business & social media',
+    ],
+  },
+  {
+    name: 'Pro',
+    price: '€750',
+    description: 'Perfect for: "I need customers to log in OR buy things online"',
+    features: [
+      '8-page website with all standard features',
+      'Choose ONE main feature:',
+      '  Option A: Customer accounts (members can log in)',
+      '  Option B: Online shop (showcase up to 12 products beautifully)',
+      '           → Need more products? Add database for +€150',
+      'You can add/edit content yourself (blog posts, products, news)',
+      'Get email alerts when customers contact or buy',
+      'Maximum visibility on Google + Maps + AI search',
+      '3 rounds of changes included',
+      'Ready in 2-3 days',
+      'BONUS: We handle small updates free for 1 month',
+    ],
+  },
+  {
+    name: 'Scale',
+    price: '€1,100',
+    description: 'Perfect for: "I want a complete online business system"',
+    features: [
+      '12-page professional website',
+      'Customer accounts (members can log in and see their info)',
+      'Admin dashboard (only you can access)',
+      'Accept payments online for:',
+      '  • Subscriptions/memberships',
+      '  • One-time purchases',
+      '  • Service bookings',
+      'Manage everything from one place:',
+      '  • View customer list',
+      '  • Check orders/bookings',
+      '  • Update content',
+      '  • See contact messages',
+      'Fast-loading pages (better for Google ranking)',
+      'Maximum online visibility everywhere',
+      '5 rounds of changes included',
+      'Ready in 3-5 days',
+      'BONUS: 1 month free updates + 15-min training video',
+    ],
+  },
+];
+
+// Popular add-ons for all packages
+export const addOns: AddOn[] = [
+  {
+    name: 'Product Database Connection',
+    price: '+€150',
+    description: 'We\'ll connect a database to handle unlimited products beyond the 12-item showcase',
+    applicableTo: ['Pro', 'Scale'],
+  },
+  {
+    name: 'Additional Pages',
+    price: '+€30 per page',
+    description: 'We\'ll add extra pages beyond your package limit',
+    applicableTo: ['Starter', 'Core', 'Pro', 'Scale'],
+  },
+  {
+    name: 'Multi-Language Setup',
+    price: '+€200',
+    description: 'We\'ll set up your site in multiple languages with language switcher',
+    applicableTo: ['Core', 'Pro', 'Scale'],
+  },
+  {
+    name: 'Online Booking Integration',
+    price: '+€100',
+    description: 'We\'ll add a booking system for appointments or reservations',
+    applicableTo: ['Core', 'Pro', 'Scale'],
+  },
+  {
+    name: 'AI Search Optimization',
+    price: '+€90',
+    description: 'We\'ll optimize your site to appear in ChatGPT, Google AI, and voice searches',
+    applicableTo: ['Starter', 'Core'],
+  },
+];
