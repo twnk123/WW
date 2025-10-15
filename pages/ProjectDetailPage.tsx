@@ -58,6 +58,11 @@ const ProjectDetailPage: React.FC = () => {
         canonical={`/work/${translatedProject.slug}`}
         image={translatedProject.coverImage}
         type="article"
+        alternates={[
+          { hrefLang: 'en', href: `/work/${translatedProject.slug}` },
+          { hrefLang: 'sl', href: `/work/${translatedProject.slug}?lang=sl` },
+          { hrefLang: 'x-default', href: `/work/${translatedProject.slug}` },
+        ]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Article',

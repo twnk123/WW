@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import AnimatedText from './AnimatedText';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const socialLinks = ['LinkedIn', 'Instagram', 'Facebook'];
+const socialLinks = [
+  { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61582389209117' },
+  { name: 'X', url: 'https://x.com/WWeaverStudio' },
+  { name: 'Instagram', url: 'https://www.instagram.com/whiteweaver_studio/' },
+  { name: 'TikTok', url: 'https://www.tiktok.com/@whiteweaverstudio' }
+];
 const quickLinks = [
   { path: '/work', labelKey: 'nav.work' },
   { path: '/services', labelKey: 'nav.services' },
@@ -41,7 +46,7 @@ const Footer: React.FC = () => {
               <p className="text-sm">{t('footer.copyright')}</p>
             </div>
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
-              {socialLinks.map(link => <a key={link} href="#" className="text-sm text-text-active/70 hover:text-text-active">{link}</a>)}
+              {socialLinks.map(link => <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm text-text-active/70 hover:text-text-active">{link.name}</a>)}
             </div>
             <nav className="flex items-center space-x-6">
               {quickLinks.map(link => <Link key={link.path} to={link.path} className="text-sm text-text-active/70 hover:text-text-active">{t(link.labelKey)}</Link>)}

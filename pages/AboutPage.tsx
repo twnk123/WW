@@ -42,6 +42,11 @@ const AboutPage: React.FC = () => {
         title={`${t('about.title')} — WHITEWEAVER Studio`}
         description={t('about.subtitle')}
         canonical="/about"
+        alternates={[
+          { hrefLang: 'en', href: '/about' },
+          { hrefLang: 'sl', href: '/about?lang=sl' },
+          { hrefLang: 'x-default', href: '/about' },
+        ]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
@@ -199,7 +204,7 @@ const AboutPage: React.FC = () => {
               ]).map((n: { year: string; text: string }, i: number) => (
                 <ScrollReveal key={n.year} delay={i * 0.1}>
                   <div className={`relative grid md:grid-cols-2 gap-8 items-center ${i % 2 === 0 ? '' : 'md:text-right'}`}>
-                    <div className={i % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:order-2'}>
+                    <div className={`pl-8 ${i % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:order-2'}`}>
                       <div className="inline-block px-4 py-2 rounded-full mb-3 shadow-lg border border-accent/30 bg-white/80 text-sm font-bold text-text-active">
                         {n.year}
                       </div>

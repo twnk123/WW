@@ -74,9 +74,14 @@ const ContactPage: React.FC = () => {
     return (
         <div className="min-h-screen overflow-hidden bg-gradient-to-b from-transparent via-accent/5 to-transparent">
             <Seo
-                title={`${t('contact.title')} — WHITEWEAVER Studio`}
+                title={`Get a Quote — Web Development Agency | WHITEWEAVER Studio`}
                 description={t('contact.subtitle')}
                 canonical="/contact"
+                alternates={[
+                  { hrefLang: 'en', href: '/contact' },
+                  { hrefLang: 'sl', href: '/contact?lang=sl' },
+                  { hrefLang: 'x-default', href: '/contact' },
+                ]}
                 jsonLd={{
                   '@context': 'https://schema.org',
                   '@type': 'BreadcrumbList',

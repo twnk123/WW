@@ -26,9 +26,14 @@ const WorkPage: React.FC = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       <Seo
-        title={`${t('work.title')} — WHITEWEAVER Studio`}
+        title={`Web Design Portfolio & Case Studies — WHITEWEAVER Studio`}
         description={t('work.subtitle')}
         canonical="/work"
+        alternates={[
+          { hrefLang: 'en', href: '/work' },
+          { hrefLang: 'sl', href: '/work?lang=sl' },
+          { hrefLang: 'x-default', href: '/work' },
+        ]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
@@ -47,8 +52,8 @@ const WorkPage: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center"
           >
-            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] md:text-[clamp(4rem,12vw,10rem)] font-normal tracking-[0.02em] leading-[0.85] uppercase mb-6 md:mb-8">
-              {t('work.title')}
+            <h1 className="font-display text-[clamp(3rem,9vw,5.5rem)] md:text-[clamp(4.5rem,12vw,7rem)] font-normal tracking-[0.02em] leading-[0.9] uppercase mb-6 md:mb-8">
+              {language === 'sl' ? 'PORTFOLIO IZDELAVE SPLETNIH STRANI' : 'WEB DESIGN PORTFOLIO & CASE STUDIES'}
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

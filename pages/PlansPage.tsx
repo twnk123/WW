@@ -48,10 +48,15 @@ const PlansPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-bg overflow-hidden">
             <Seo
-                title={`${t('plans.title')} — WHITEWEAVER Studio`}
+                title={`Website Pricing Packages — WHITEWEAVER Studio`}
                 description={t('plans.subtitle') as string}
                 canonical="/plans"
                 type="product"
+                alternates={[
+                  { hrefLang: 'en', href: '/plans' },
+                  { hrefLang: 'sl', href: '/plans?lang=sl' },
+                  { hrefLang: 'x-default', href: '/plans' },
+                ]}
                 jsonLd={[
                   {
                     '@context': 'https://schema.org',

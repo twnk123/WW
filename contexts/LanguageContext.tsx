@@ -24,6 +24,14 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      if (urlLang === 'sl' || urlLang === 'en') {
+        localStorage.setItem('language', urlLang);
+        return urlLang as Language;
+      }
+    } catch {}
     const saved = localStorage.getItem('language');
     return (saved === 'sl' ? 'sl' : 'en') as Language;
   });
@@ -436,7 +444,7 @@ const translations: Record<Language, any> = {
         exampleLabel: 'Example:'
       },
       buildProcess: {
-        title: 'Proces Gradnje',
+        title: 'Build Process',
         steps: [
           {
             title: 'Setup Development Environment',
@@ -532,8 +540,8 @@ const translations: Record<Language, any> = {
         }
       },
       faq: {
-        title: 'Pogosto Zastavljena Vprašanja',
-        subtitle: 'Vse, kar morate vedeti o gradnji lastne spletne strani.',
+        title: 'Frequently Asked Questions',
+        subtitle: 'Everything you need to know about building your own website.',
         items: [
           {
             q: 'What technical skills do I need?',

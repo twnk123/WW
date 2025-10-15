@@ -61,13 +61,27 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
+  const seoTitle = language === 'sl'
+    ? 'Agencija za razvoj spletnih strani v Sloveniji | WHITEWEAVER Studio'
+    : 'AI-Powered Web Development Agency in Slovenia | WHITEWEAVER Studio';
+
+  const baseDesc = t('home.services.subtitle') as string;
+  const description = language === 'sl'
+    ? `${baseDesc} Služimo Sloveniji (Ljubljana).`
+    : `${baseDesc} Serving Slovenia (Ljubljana).`;
+
   return (
     <div>
       <Seo
-        title={`WHITEWEAVER Studio — ${language === 'sl' ? 'od ideje do izvedbe hitro' : 'from idea to reality fast'}`}
-        description={t('home.services.subtitle')}
+        title={seoTitle}
+        description={description}
         canonical="/"
         image={`${import.meta.env.BASE_URL}hero/hero-1.webp`}
+        alternates={[
+          { hrefLang: 'en', href: '/' },
+          { hrefLang: 'sl', href: '/?lang=sl' },
+          { hrefLang: 'x-default', href: '/' },
+        ]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
@@ -81,6 +95,18 @@ const HomePage: React.FC = () => {
             name: 'WHITEWEAVER Studio',
             url: window.location.origin,
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ProfessionalService',
+            name: 'WHITEWEAVER Studio',
+            url: window.location.origin,
+            areaServed: ['Slovenia', 'Ljubljana'],
+            address: {
+              '@type': 'PostalAddress',
+              addressCountry: 'SI',
+              addressLocality: 'Ljubljana'
+            }
+          }
         ]}
       />
       {/* Hero Section */}

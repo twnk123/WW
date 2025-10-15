@@ -536,20 +536,44 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
+  const servicesSeoTitle = language === 'sl'
+    ? 'Storitve razvoja spletnih strani, ecommerce in AI integracija — WHITEWEAVER Studio'
+    : 'Web Development Services, Ecommerce & AI Integration — WHITEWEAVER Studio';
+  const servicesDescBase = t('services.subtitle') as string;
+  const servicesDesc = language === 'sl'
+    ? `${servicesDescBase} Lokacija: Slovenija (Ljubljana).`
+    : `${servicesDescBase} Location: Slovenia (Ljubljana).`;
+
   return (
     <div className="min-h-screen overflow-hidden bg-bg">
       <Seo
-        title={`${t('services.title')} — WHITEWEAVER Studio`}
-        description={t('services.subtitle')}
+        title={servicesSeoTitle}
+        description={servicesDesc}
         canonical="/services"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: window.location.origin + '/' },
-            { '@type': 'ListItem', position: 2, name: String(t('services.title')), item: window.location.origin + '/services' },
-          ],
-        }}
+        alternates={[
+          { hrefLang: 'en', href: '/services' },
+          { hrefLang: 'sl', href: '/services?lang=sl' },
+          { hrefLang: 'x-default', href: '/services' },
+        ]}
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: window.location.origin + '/' },
+              { '@type': 'ListItem', position: 2, name: String(t('services.title')), item: window.location.origin + '/services' },
+            ],
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: (t('services.faqs') as Array<{ q: string; a: string }>).map(item => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a }
+            }))
+          }
+        ]}
       />
       {/* Hero Section - Above the fold */}
       <section className="h-screen flex items-center justify-center">
@@ -560,8 +584,8 @@ const ServicesPage: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center"
           >
-            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] md:text-[clamp(4rem,12vw,10rem)] font-normal tracking-[0.02em] leading-[0.85] uppercase mb-6 md:mb-8">
-              {t('services.title')}
+            <h1 className="font-display text-[clamp(3rem,9vw,5.5rem)] md:text-[clamp(4.5rem,12vw,7rem)] font-normal tracking-[0.02em] leading-[0.9] uppercase mb-6 md:mb-8">
+              {language === 'sl' ? 'STORITVE RAZVOJA SPLETNIH STRANI, ECOMMERCE IN AI INTEGRACIJA' : 'WEB DEVELOPMENT SERVICES, ECOMMERCE & AI INTEGRATION'}
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -578,6 +602,12 @@ const ServicesPage: React.FC = () => {
       {/* Services Grid */}
       <section id="services" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+            <a href="#web-development" className="px-4 py-2 rounded-full border border-line hover:border-text-active text-sm">Web Development</a>
+            <a href="#ecommerce-development" className="px-4 py-2 rounded-full border border-line hover:border-text-active text-sm">Ecommerce Development</a>
+            <a href="#ai-agent-integration" className="px-4 py-2 rounded-full border border-line hover:border-text-active text-sm">AI Agent Integration</a>
+            <a href="#headless-cms" className="px-4 py-2 rounded-full border border-line hover:border-text-active text-sm">Headless CMS</a>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -593,9 +623,24 @@ const ServicesPage: React.FC = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={service.name} service={service} index={index} />
-            ))}
+            {services.map((service, index) => {
+              const idMap: Record<string, string> = {
+                web: 'web-development',
+                ai: 'ai-agent-integration',
+                strategy: 'headless-cms',
+                mobile: 'mobile-app-development',
+              };
+              const anchorId = idMap[service.name] || service.name;
+              return (
+                <div key={service.name} id={anchorId}>
+                  {/* For ecommerce, link to web-development section */}
+                  {service.name === 'web' && (
+                    <div id="ecommerce-development" className="sr-only">Ecommerce Development</div>
+                  )}
+                  <ServiceCard service={service} index={index} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
