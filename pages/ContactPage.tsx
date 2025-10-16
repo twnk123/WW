@@ -14,6 +14,7 @@ const ContactPage: React.FC = () => {
         package: '',
         details: ''
     });
+    const [inquiryType, setInquiryType] = useState<'question' | 'order'>('question');
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -22,6 +23,19 @@ const ContactPage: React.FC = () => {
             ...formData,
             [e.target.name]: e.target.value
         });
+    };
+
+    const handleInquiryTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newType = e.target.value as 'question' | 'order';
+        setInquiryType(newType);
+
+        // Clear package when switching to Question
+        if (newType === 'question') {
+            setFormData({
+                ...formData,
+                package: ''
+            });
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -38,10 +52,15 @@ const ContactPage: React.FC = () => {
                 throw new Error('EmailJS configuration is missing. Please check your .env file.');
             }
 
+            const inquiryTypeLabel = inquiryType === 'order' ? 'Naročilo' : 'Vprašanje';
+            const inquiryTypePrefix = inquiryType === 'order' ? '[NAROČILO]' : '[VPRAŠANJE]';
+
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
-                package: formData.package,
+                package: formData.package || 'Ni izbran',
+                inquiry_type: inquiryTypeLabel,
+                inquiry_prefix: inquiryTypePrefix,
                 message: formData.details,
                 to_email: 'support@whiteweaver.com'
             };
@@ -58,6 +77,7 @@ const ContactPage: React.FC = () => {
 
             setStatus('success');
             setFormData({ name: '', email: '', package: '', details: '' });
+            setInquiryType('question');
 
             // Reset success message after 5 seconds
             setTimeout(() => setStatus('idle'), 5000);
@@ -174,7 +194,47 @@ const ContactPage: React.FC = () => {
                         </div>
                     </ScrollReveal>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
+                        {/* Inquiry Type Toggle */}
+                        <ScrollReveal>
+                            <fieldset className="mb-6">
+                                <legend className="block text-sm font-medium text-text-active mb-3">
+                                    {t('contact.form.inquiryType.question')} / {t('contact.form.inquiryType.order')} *
+                                </legend>
+                                <div className="inline-flex rounded-xl border border-accent/20 bg-white overflow-hidden">
+                                    <label className="relative cursor-pointer">
+                                        <input
+                                            type="radio"
+                                            name="inquiryType"
+                                            value="question"
+                                            checked={inquiryType === 'question'}
+                                            onChange={handleInquiryTypeChange}
+                                            required
+                                            disabled={status === 'sending'}
+                                            className="sr-only peer"
+                                        />
+                                        <span className="block px-6 py-3 text-sm font-medium transition-colors peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 text-text-active/60 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
+                                            {t('contact.form.inquiryType.question')}
+                                        </span>
+                                    </label>
+                                    <label className="relative cursor-pointer">
+                                        <input
+                                            type="radio"
+                                            name="inquiryType"
+                                            value="order"
+                                            checked={inquiryType === 'order'}
+                                            onChange={handleInquiryTypeChange}
+                                            required
+                                            disabled={status === 'sending'}
+                                            className="sr-only peer"
+                                        />
+                                        <span className="block px-6 py-3 text-sm font-medium transition-colors peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 text-text-active/60 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
+                                            {t('contact.form.inquiryType.order')}
+                                        </span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </ScrollReveal>
                         <ScrollReveal>
                             <div>
                                 <label className="block text-sm font-medium text-text-active mb-2">{t('contact.form.name')} *</label>
@@ -205,30 +265,35 @@ const ContactPage: React.FC = () => {
                                 />
                             </div>
                         </ScrollReveal>
-                        <ScrollReveal delay={0.2}>
-                            <div>
-                                <label className="block text-sm font-medium text-text-active mb-2">{t('contact.form.package')} *</label>
-                                <select
-                                    name="package"
-                                    value={formData.package}
-                                    onChange={handleChange}
-                                    required
-                                    disabled={status === 'sending'}
-                                    className="w-full bg-white border border-accent/20 p-4 rounded-xl focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    <option value="">{t('contact.form.packagePlaceholder')}</option>
-                                    <option value="starter">Starter - €250</option>
-                                    <option value="core">Core - €500</option>
-                                    <option value="pro">Pro - €750</option>
-                                    <option value="scale">Scale - €1,100</option>
-                                    <option value="custom">Custom Project</option>
-                                </select>
-                            </div>
-                        </ScrollReveal>
+                        {inquiryType === 'order' && (
+                            <ScrollReveal delay={0.2}>
+                                <div>
+                                    <label className="block text-sm font-medium text-text-active mb-2">
+                                        {t('contact.form.package')} *
+                                    </label>
+                                    <select
+                                        name="package"
+                                        value={formData.package}
+                                        onChange={handleChange}
+                                        required
+                                        disabled={status === 'sending'}
+                                        className="w-full bg-white border border-accent/20 p-4 rounded-xl focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        <option value="">{t('contact.form.packagePlaceholder')}</option>
+                                        <option value="starter">Starter - €250</option>
+                                        <option value="core">Core - €500</option>
+                                        <option value="pro">Pro - €750</option>
+                                        <option value="scale">Scale - €1,100</option>
+                                        <option value="custom">Custom Project</option>
+                                    </select>
+                                </div>
+                            </ScrollReveal>
+                        )}
                         <ScrollReveal delay={0.3}>
                             <div>
                                 <label className="block text-sm font-medium text-text-active mb-2">{t('contact.form.details')} *</label>
                                 <textarea
+                                    id="message"
                                     name="details"
                                     value={formData.details}
                                     onChange={handleChange}

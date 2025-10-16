@@ -709,7 +709,11 @@ const translations: Record<Language, any> = {
         detailsPlaceholder: 'Tell us about your project...',
         send: 'Send Message',
         namePlaceholder: 'Your name',
-        emailPlaceholder: 'your@email.com'
+        emailPlaceholder: 'your@email.com',
+        inquiryType: {
+          order: 'Order',
+          question: 'Question'
+        }
       }
     },
     about: {
@@ -1491,7 +1495,11 @@ const translations: Record<Language, any> = {
         detailsPlaceholder: 'Povejte nam o svojem projektu...',
         send: 'Pošlji Sporočilo',
         namePlaceholder: 'Vaše ime',
-        emailPlaceholder: 'vasa@eposta.si'
+        emailPlaceholder: 'vasa@eposta.si',
+        inquiryType: {
+          order: 'Naročilo',
+          question: 'Vprašanje'
+        }
       }
     },
     about: {
