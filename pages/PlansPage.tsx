@@ -13,10 +13,10 @@ import { plans as basePlans } from '../data/plans';
 
 const PlansPage: React.FC = () => {
     const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
 
     // Get translated plans
-    const translatedPlans = plansTranslations[language].plans;
+    const translatedPlans = plansTranslations.en.plans;
     const heroHeading = t('plans.heroHeading') as string;
     const planButtons = t('plans.planCard') as { cta: string };
     const comparison = t('plans.comparison') as {
@@ -54,7 +54,7 @@ const PlansPage: React.FC = () => {
                 type="product"
                 alternates={[
                   { hrefLang: 'en', href: '/plans' },
-                  { hrefLang: 'sl', href: '/plans?lang=sl' },
+                  
                   { hrefLang: 'x-default', href: '/plans' },
                 ]}
                 jsonLd={[
@@ -165,6 +165,8 @@ const PlansPage: React.FC = () => {
                             };
                             const isPopular = index === 1; // Core plan is most popular
                             const isPremium = index === 3; // Scale plan
+                            const hasDiscount = index >= 1; // Core, Pro, and Scale have discount
+                            const discountPercent = index === 1 ? 0.50 : index === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
 
                             return (
                                 <motion.div
@@ -177,6 +179,16 @@ const PlansPage: React.FC = () => {
                                     onHoverEnd={() => setHoveredPlan(null)}
                                     className="relative"
                                 >
+                                    {hasDiscount && (
+                                        <div className="absolute -top-3 -right-3 z-20">
+                                            <div className="relative">
+                                                <div className="bg-gradient-to-br from-red-500 to-red-600 text-white px-4 py-2 rounded-lg shadow-xl transform rotate-3">
+                                                    <div className="font-bold text-sm">{Math.round(discountPercent * 100)}% OFF</div>
+                                                    <div className="text-xs opacity-90">Founding Clients</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                     {isPopular && (
                                         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
                                             <span className="px-4 py-1 bg-accent text-black text-xs font-semibold rounded-full whitespace-nowrap shadow-lg">
@@ -208,9 +220,20 @@ const PlansPage: React.FC = () => {
 
                                         {/* Price */}
                                         <div className="mb-6">
-                                            <span className="font-display text-4xl font-bold tracking-tight">
-                                                {plan.price}
-                                            </span>
+                                            {hasDiscount ? (
+                                                <div className="flex items-baseline gap-3">
+                                                    <span className="font-display text-4xl font-bold tracking-tight text-red-600">
+                                                        €{Math.round(parseInt(plan.price.replace(/[^0-9]/g, '')) * (1 - discountPercent))}
+                                                    </span>
+                                                    <span className="font-display text-2xl font-medium tracking-tight text-text-active/40 line-through">
+                                                        {plan.price}
+                                                    </span>
+                                                </div>
+                                            ) : (
+                                                <span className="font-display text-4xl font-bold tracking-tight">
+                                                    {plan.price}
+                                                </span>
+                                            )}
                                         </div>
 
                                         {/* Features - Show all features */}
@@ -309,10 +332,19 @@ const PlansPage: React.FC = () => {
                                         <th className="text-left py-4 px-4 text-text-active font-medium">{comparison.feature}</th>
                                         {plans.map((plan, planIndex) => {
                                             const translatedPlan = translatedPlans[planIndex] ?? { name: plan.name };
+                                            const hasDiscount = planIndex >= 1; // Core, Pro, and Scale have discount
+                                            const discountPercent = planIndex === 1 ? 0.50 : planIndex === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
+                                            const originalPrice = parseInt(plan.price.replace(/[^0-9]/g, ''));
+                                            const discountedPrice = Math.round(originalPrice * (1 - discountPercent));
+
                                             return (
                                                 <th key={plan.name} className="text-center py-4 px-4">
                                                     <div className="font-display text-lg font-medium">{translatedPlan.name}</div>
-                                                    <div className="text-accent font-bold">{plan.price}</div>
+                                                    {hasDiscount ? (
+                                                        <div className="text-red-600 font-bold">€{discountedPrice}</div>
+                                                    ) : (
+                                                        <div className="text-accent font-bold">{plan.price}</div>
+                                                    )}
                                                 </th>
                                             );
                                         })}

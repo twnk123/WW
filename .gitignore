@@ -30,3 +30,19 @@ dist-ssr
 
 # Playwright MCP
 .playwright-mcp/
+
+# Local documentation and notes
+google.txt
+Privacy.txt
+Terms.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# OS-specific files
+Thumbs.db
+Desktop.ini

@@ -7,11 +7,11 @@ import { projectsTranslations } from '../data/projectsTranslations';
 import Seo from '../components/Seo';
 
 const WorkPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   
   // Get translated projects
   const translatedProjects = projects.map(project => {
-    const translation = projectsTranslations[language].projects.find(p => p.slug === project.slug);
+    const translation = projectsTranslations.en.projects.find(p => p.slug === project.slug);
     return {
       ...project,
       title: translation?.title || project.title,
@@ -31,7 +31,7 @@ const WorkPage: React.FC = () => {
         canonical="/work"
         alternates={[
           { hrefLang: 'en', href: '/work' },
-          { hrefLang: 'sl', href: '/work?lang=sl' },
+          
           { hrefLang: 'x-default', href: '/work' },
         ]}
         jsonLd={{
@@ -53,7 +53,7 @@ const WorkPage: React.FC = () => {
             className="text-center"
           >
             <h1 className="font-display text-[clamp(3rem,9vw,5.5rem)] md:text-[clamp(4.5rem,12vw,7rem)] font-normal tracking-[0.02em] leading-[0.9] uppercase mb-6 md:mb-8">
-              {language === 'sl' ? 'PORTFOLIO IZDELAVE SPLETNIH STRANI' : 'WEB DESIGN PORTFOLIO & CASE STUDIES'}
+              WEB DESIGN PORTFOLIO & CASE STUDIES
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

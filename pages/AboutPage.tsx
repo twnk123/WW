@@ -8,7 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import Seo from '../components/Seo';
 
 const AboutPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const valuesData = t('about.values') as any;
   const valuesItems = Array.isArray(valuesData?.items) ? valuesData.items : [];
   const timelineData = t('about.timeline') as any;
@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
   const localizedFaqs = Array.isArray(faqData?.items) && faqData.items.length
     ? faqData.items
     : faqs;
-  const faqTitle = faqData?.title || (language === 'sl' ? 'Pogosta vprašanja' : 'FAQ');
+  const faqTitle = faqData?.title || 'FAQ';
 
   return (
     <div className="min-h-screen overflow-hidden bg-gradient-to-b from-transparent via-accent/5 to-transparent">
@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
         canonical="/about"
         alternates={[
           { hrefLang: 'en', href: '/about' },
-          { hrefLang: 'sl', href: '/about?lang=sl' },
+          
           { hrefLang: 'x-default', href: '/about' },
         ]}
         jsonLd={{

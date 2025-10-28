@@ -47,11 +47,11 @@ const FloatingImage: React.FC<{ imageData: typeof floatingImages[number] }> = ({
 };
 
 const HomePage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   // Get translated projects
   const translatedProjects = projects.map(project => {
-    const translation = projectsTranslations[language].projects.find(p => p.slug === project.slug);
+    const translation = projectsTranslations.en.projects.find(p => p.slug === project.slug);
     return {
       ...project,
       title: translation?.title || project.title,
@@ -61,14 +61,10 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
-  const seoTitle = language === 'sl'
-    ? 'Agencija za razvoj spletnih strani v Sloveniji | WHITEWEAVER Studio'
-    : 'AI-Powered Web Development Agency in Slovenia | WHITEWEAVER Studio';
+  const seoTitle = 'AI-Powered Web Development Agency in Slovenia | WHITEWEAVER Studio';
 
   const baseDesc = t('home.services.subtitle') as string;
-  const description = language === 'sl'
-    ? `${baseDesc} Služimo Sloveniji (Ljubljana).`
-    : `${baseDesc} Serving Slovenia (Ljubljana).`;
+  const description = `${baseDesc} Serving Slovenia (Ljubljana).`;
 
   return (
     <div>
@@ -79,7 +75,6 @@ const HomePage: React.FC = () => {
         image={`${import.meta.env.BASE_URL}hero/hero-1.webp`}
         alternates={[
           { hrefLang: 'en', href: '/' },
-          { hrefLang: 'sl', href: '/?lang=sl' },
           { hrefLang: 'x-default', href: '/' },
         ]}
         jsonLd={[
@@ -127,6 +122,16 @@ const HomePage: React.FC = () => {
             <ScrollReveal delay={0.6}>
               <p className="mt-6 text-lg text-text-active/80 max-w-xl mx-auto">{t('home.hero.subtitle')}</p>
             </ScrollReveal>
+            <ScrollReveal delay={0.8} className="mt-10 flex items-center justify-center gap-4">
+              <a href="https://calendly.com/tonklis-vodopivec/30min" target="_blank" rel="noopener noreferrer">
+                <Button variant="navbar">
+                  {t('home.hero.startBuild')}
+                </Button>
+              </a>
+              <Button to="/services" variant="navbar">
+                {t('home.hero.seeHow')}
+              </Button>
+            </ScrollReveal>
           </div>
 
           <ScrollReveal delay={0.8} className="absolute bottom-10 z-30">
@@ -152,10 +157,12 @@ const HomePage: React.FC = () => {
               <p className="mt-6 text-base text-text-active/80 max-w-md mx-auto">{t('home.hero.subtitle')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.4} className="mt-8 flex flex-col items-center space-y-4">
-              <Button to="/contact" className="w-full max-w-xs">
-                {t('home.hero.startBuild')}
-              </Button>
-              <Button to="/services" variant="secondary" className="w-full max-w-xs">
+              <a href="https://calendly.com/tonklis-vodopivec/30min" target="_blank" rel="noopener noreferrer" className="w-full max-w-xs">
+                <Button variant="navbar" className="w-full">
+                  {t('home.hero.startBuild')}
+                </Button>
+              </a>
+              <Button to="/services" variant="navbar" className="w-full max-w-xs">
                 {t('home.hero.seeHow')}
               </Button>
             </ScrollReveal>
@@ -279,7 +286,13 @@ const HomePage: React.FC = () => {
             </p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            {plans.map((plan, index) => (
+            {plans.map((plan, index) => {
+              const hasDiscount = index >= 1; // Core, Pro, and Scale have discount
+              const discountPercent = index === 1 ? 0.50 : index === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
+              const originalPrice = parseInt(plan.price.replace(/[^0-9]/g, ''));
+              const discountedPrice = Math.round(originalPrice * (1 - discountPercent));
+
+              return (
               <ScrollReveal key={plan.name} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.02, y: -4 }}
@@ -288,7 +301,14 @@ const HomePage: React.FC = () => {
                 >
                   <h2 className="font-display text-3xl font-medium tracking-tighter">{plan.name}</h2>
                   <p className="text-text-active/70 my-2">{plan.description}</p>
-                  <p className="font-display text-5xl font-bold my-4">{plan.price}</p>
+                  {hasDiscount ? (
+                    <div className="flex items-baseline gap-3 my-4">
+                      <span className="font-display text-5xl font-bold text-red-600">€{discountedPrice}</span>
+                      <span className="font-display text-3xl font-medium text-text-active/40 line-through">{plan.price}</span>
+                    </div>
+                  ) : (
+                    <p className="font-display text-5xl font-bold my-4">{plan.price}</p>
+                  )}
                   <ul className="space-y-2 text-text-active/80 flex-grow mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center">
@@ -304,7 +324,8 @@ const HomePage: React.FC = () => {
                   </Button>
                 </motion.div>
               </ScrollReveal>
-            ))}
+              );
+            })}
           </div>
           <ScrollReveal className="text-center mt-12">
             <Button to="/plans" variant="secondary">

@@ -6,7 +6,7 @@ interface ButtonProps {
   to?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'navbar';
   className?: string;
 }
 
@@ -14,8 +14,13 @@ const Button: React.FC<ButtonProps> = ({ to, onClick, children, variant = 'prima
   const baseClasses = "px-6 py-3 rounded-full transition-colors duration-300 inline-block text-center";
   const primaryClasses = "bg-button-bg hover:bg-button-bg-hover text-text-active";
   const secondaryClasses = "border border-line hover:bg-button-bg text-text-active";
-  
-  const buttonClasses = `${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses} ${className}`;
+  const navbarClasses = "bg-text-active text-bg hover:bg-text-active/90";
+
+  const buttonClasses = `${baseClasses} ${
+    variant === 'primary' ? primaryClasses :
+    variant === 'navbar' ? navbarClasses :
+    secondaryClasses
+  } ${className}`;
 
   if (to) {
     return (

@@ -38,45 +38,5 @@ export const projectsTranslations = {
         mission: 'To translate Keje Stari\'s avant-garde fashion identity into a digital flagship that spotlights collections, supports seamless shopping journeys, and scales with seasonal campaigns.'
       }
     ]
-  },
-  sl: {
-    projects: [
-      {
-        slug: 'alpine-roast',
-        title: 'Alpine Roast Kavarna',
-        tag: 'Referenca €250 Paketa',
-        client: 'Lokalna Kavarna',
-        expertise: ['Odziven Dizajn', 'SEO Optimizacija', 'Osnovne Animacije'],
-        description: 'Čista, profesionalna spletna stran za lokalno kavarno. Ta projekt prikazuje, kaj vključuje naš paket za €250: odziven dizajn, bistvene strani, kontaktne obrazce in osnovno SEO nastavitev. Popolno za mala podjetja, ki želijo vzpostaviti svojo spletno prisotnost.',
-        mission: 'Ustvariti vabljivo digitalno izkušnjo, ki zajame toplino in kakovost Alpine Roast kavarne, privablja obiskovalce in gradi zvestobo strank skozi profesionalno spletno prisotnost.'
-      },
-      {
-        slug: 'voltsure',
-        title: 'VoltSure',
-        tag: 'Referenca €500 Paketa',
-        client: 'Ponudnik Energetskih Rešitev',
-        expertise: ['Napredne Funkcije', 'Prilagojene Grafike', 'Optimizacija Zmogljivosti'],
-        description: 'Moderna, z funkcijami bogata spletna stran za podjetje za energetske rešitve. Ta referenca paketa za €500 vključuje napredne animacije, interaktivne elemente, večstransko postavitev in izboljšano SEO. Idealno za rastoča podjetja, ki potrebujejo profesionalne funkcije.',
-        mission: 'Vzpostaviti VoltSure kot zaupanja vrednega voditelja v trajnostnih energetskih rešitvah skozi sofisticirano spletno prisotnost, ki sporoča inovativnost, zanesljivost in okoljsko odgovornost.'
-      },
-      {
-        slug: 'gympro',
-        title: 'GymPro',
-        tag: 'Referenca €750 Paketa',
-        client: 'Veriga Fitnes Centrov',
-        expertise: ['Sistem Rezervacij', 'Portal za Člane', 'Urniki Vadb', 'Napredne Animacije'],
-        description: 'Obsežna fitnes spletna stran, ki prikazuje zmožnosti našega paketa za €750. Funkcije vključujejo razporejanje vadb, profile trenerjev, članarine in interaktivne elemente. Popolno za podjetja, ki zahtevajo kompleksno funkcionalnost in angažiranost uporabnikov.',
-        mission: 'Ustvariti motivirajočo digitalno izkušnjo, ki spodbuja rast članstva, poenostavlja rezervacije vadb in gradi močno fitnes skupnost skozi privlačno platformo, bogato s funkcijami.'
-      },
-      {
-        slug: 'keje-stari',
-        title: 'Keje Stari',
-        tag: 'Referenca €1,100 Paketa',
-        client: 'Luksuzna Modna Znamka',
-        expertise: ['Prilagojen Dizajn', 'E-trgovinska Izkušnja', 'Interaktivni Lookbooki', 'Večjezičnost', 'Headless CMS'],
-        description: 'Premium modna e-trgovina, ki prikazuje naš paket za €1,100. Rešitev vključuje poglobljene lookbooke, pripovedovanje zgodb o kolekcijah, večjezično vsebino in headless CMS za enostavno upravljanje kolekcij, dropov in kampanj.',
-        mission: 'Prevesti avantgardno modno identiteto Keje Stari v digitalno zastavo, ki izpostavi kolekcije, omogoča brezhibne nakupne poti in se prilagaja sezonskim kampanjam.'
-      }
-    ]
   }
 };

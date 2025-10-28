@@ -19,7 +19,7 @@ export const plans: Plan[] = [
   },
   {
     name: 'Core',
-    price: '€500',
+    price: '€600',
     description: 'Perfect for: "I want a real website that gets me customers"',
     features: [
       '5-page website (Home, About, Services, Contact, plus one more)',
@@ -40,7 +40,7 @@ export const plans: Plan[] = [
   },
   {
     name: 'Pro',
-    price: '€750',
+    price: '€950',
     description: 'Perfect for: "I need customers to log in OR buy things online"',
     features: [
       '8-page website with all standard features',
@@ -58,7 +58,7 @@ export const plans: Plan[] = [
   },
   {
     name: 'Scale',
-    price: '€1,100',
+    price: '€1,850',
     description: 'Perfect for: "I want a complete online business system"',
     features: [
       '12-page professional website',

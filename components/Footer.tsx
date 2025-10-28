@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
     <>
       {/* Marquee band - section above footer */}
       <section className="w-full bg-bg text-text-active py-16 md:py-24 lg:py-32 overflow-hidden border-t border-line">
-        <div className="marquee-content whitespace-nowrap font-display text-[16rem] md:text-[24rem] lg:text-[32rem] font-bold tracking-widest uppercase leading-none">
+        <div className="marquee-content whitespace-nowrap font-display text-[16rem] md:text-[24rem] lg:text-[32rem] font-bold tracking-widest uppercase leading-none notranslate" translate="no">
           WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER —
         </div>
       </section>

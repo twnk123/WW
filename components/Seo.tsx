@@ -87,12 +87,8 @@ export const Seo: React.FC<SeoProps> = ({
     setMeta('og:image', absoluteUrl(image));
     setMeta('og:site_name', 'WHITEWEAVER Studio');
 
-    // Basic locale inference from saved language
-    try {
-      const savedLang = localStorage.getItem('language');
-      const ogLocale = savedLang === 'sl' ? 'sl_SI' : 'en_US';
-      setMeta('og:locale', ogLocale);
-    } catch {}
+    // Set English locale
+    setMeta('og:locale', 'en_US');
 
     setNameMeta('twitter:card', image ? 'summary_large_image' : 'summary');
     setNameMeta('twitter:title', title);

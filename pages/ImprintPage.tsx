@@ -10,7 +10,7 @@ const ImprintPage: React.FC = () => {
         canonical="/imprint"
         alternates={[
           { hrefLang: 'en', href: '/imprint' },
-          { hrefLang: 'sl', href: '/imprint?lang=sl' },
+          
           { hrefLang: 'x-default', href: '/imprint' },
         ]}
       />

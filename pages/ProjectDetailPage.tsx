@@ -13,14 +13,14 @@ const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [imageIndex, setImageIndex] = useState(0);
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   
   const project = projects.find(p => p.slug === slug);
   
   // Get translated project data
   const getTranslatedProject = (proj: typeof project) => {
     if (!proj) return null;
-    const translation = projectsTranslations[language].projects.find(p => p.slug === proj.slug);
+    const translation = projectsTranslations.en.projects.find(p => p.slug === proj.slug);
     return {
       ...proj,
       title: translation?.title || proj.title,
@@ -60,7 +60,7 @@ const ProjectDetailPage: React.FC = () => {
         type="article"
         alternates={[
           { hrefLang: 'en', href: `/work/${translatedProject.slug}` },
-          { hrefLang: 'sl', href: `/work/${translatedProject.slug}?lang=sl` },
+          
           { hrefLang: 'x-default', href: `/work/${translatedProject.slug}` },
         ]}
         jsonLd={{

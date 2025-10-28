@@ -465,7 +465,7 @@ const FAQ: React.FC<{
 };
 
 const ServicesPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   
   const services = [
     {
@@ -536,13 +536,9 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  const servicesSeoTitle = language === 'sl'
-    ? 'Storitve razvoja spletnih strani, ecommerce in AI integracija — WHITEWEAVER Studio'
-    : 'Web Development Services, Ecommerce & AI Integration — WHITEWEAVER Studio';
+  const servicesSeoTitle = 'Web Development Services, Ecommerce & AI Integration — WHITEWEAVER Studio';
   const servicesDescBase = t('services.subtitle') as string;
-  const servicesDesc = language === 'sl'
-    ? `${servicesDescBase} Lokacija: Slovenija (Ljubljana).`
-    : `${servicesDescBase} Location: Slovenia (Ljubljana).`;
+  const servicesDesc = `${servicesDescBase} Location: Slovenia (Ljubljana).`;
 
   return (
     <div className="min-h-screen overflow-hidden bg-bg">
@@ -552,7 +548,7 @@ const ServicesPage: React.FC = () => {
         canonical="/services"
         alternates={[
           { hrefLang: 'en', href: '/services' },
-          { hrefLang: 'sl', href: '/services?lang=sl' },
+          
           { hrefLang: 'x-default', href: '/services' },
         ]}
         jsonLd={[
@@ -585,7 +581,7 @@ const ServicesPage: React.FC = () => {
             className="text-center"
           >
             <h1 className="font-display text-[clamp(3rem,9vw,5.5rem)] md:text-[clamp(4.5rem,12vw,7rem)] font-normal tracking-[0.02em] leading-[0.9] uppercase mb-6 md:mb-8">
-              {language === 'sl' ? 'STORITVE RAZVOJA SPLETNIH STRANI, ECOMMERCE IN AI INTEGRACIJA' : 'WEB DEVELOPMENT SERVICES, ECOMMERCE & AI INTEGRATION'}
+              WEB DEVELOPMENT SERVICES, ECOMMERCE & AI INTEGRATION
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const [invertOn, setInvertOn] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsOpen(false); 
@@ -49,10 +49,6 @@ const Header: React.FC = () => {
     localStorage.setItem('invert-colors', next ? '1' : '0');
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'sl' : 'en');
-  };
-
   const menuVariants: Variants = {
     closed: { opacity: 0, y: '-100%' },
     open: { 
@@ -75,10 +71,10 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Desktop Header - hide nav bar below 1050px */}
-      <header className="hidden min-[1050px]:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+      <header className="hidden min-[1050px]:block fixed top-[53px] left-0 right-0 z-40 transition-colors duration-300">
         <div className={`max-w-7xl mx-auto px-6 md:px-10 transition-all duration-300 ${isScrolled ? 'pt-4' : 'pt-8'}`}>
           <div className="relative flex justify-center items-center h-16 bg-transparent">
-            <Link to="/" className="absolute left-0 font-display text-2xl font-bold tracking-widest uppercase z-10">
+            <Link to="/" className="absolute left-0 font-display text-2xl font-bold tracking-widest uppercase z-10 notranslate" translate="no">
               Whiteweaver
             </Link>
             <nav className="flex-shrink-0">
@@ -97,9 +93,6 @@ const Header: React.FC = () => {
               </div>
             </nav>
             <div className="absolute right-0 flex items-center space-x-2">
-              <button aria-label="Toggle language" onClick={toggleLanguage} title={language === 'en' ? 'Switch to Slovenian' : 'Preklopi na angleščino'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
-                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-              </button>
               <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
               </button>
@@ -109,16 +102,13 @@ const Header: React.FC = () => {
       </header>
 
       {/* Mobile Header - show below 1050px */}
-      <header className={`min-[1050px]:hidden fixed top-4 left-4 right-4 z-50 transition-all duration-300`}>
+      <header className={`min-[1050px]:hidden fixed top-[89px] left-4 right-4 z-[60] transition-all duration-300`}>
         <div className={`p-2 rounded-2xl ${isOpen ? 'bg-bg' : 'bg-bg/80 backdrop-blur-sm'}`}>
             <div className="flex justify-between items-center h-12 px-4">
-                <Link to="/" className="font-display text-xl font-bold tracking-widest uppercase">
+                <Link to="/" className="font-display text-xl font-bold tracking-widest uppercase notranslate" translate="no">
                   Whiteweaver
                 </Link>
                 <div className="flex items-center space-x-2">
-                  <button aria-label="Toggle language" onClick={toggleLanguage} title={language === 'en' ? 'Switch to Slovenian' : 'Preklopi na angleščino'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
-                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                  </button>
                   <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
                   </button>
@@ -152,7 +142,7 @@ const Header: React.FC = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="min-[1050px]:hidden fixed inset-0 bg-bg z-40 pt-24"
+            className="min-[1050px]:hidden fixed inset-0 bg-bg z-50 pt-[180px]"
           >
             <nav className="flex flex-col items-center justify-center h-full pb-20">
               {navLinks.map(link => (

@@ -5,6 +5,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import UrgencyBanner from './components/UrgencyBanner';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const WorkPage = lazy(() => import('./pages/WorkPage'));
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <ScrollToTop />
         <div className="bg-bg text-text-active font-body min-h-screen flex flex-col">
+          <UrgencyBanner />
           <Header />
           <main className="flex-grow">
             <Suspense fallback={<div className="h-screen w-full flex items-center justify-center">Loading...</div>}>
