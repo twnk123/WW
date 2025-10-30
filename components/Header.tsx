@@ -93,7 +93,7 @@ const Header: React.FC = () => {
               </div>
             </nav>
             <div className="absolute right-0 flex items-center space-x-2">
-              <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
+              <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-black/25 hover:bg-black/35 border border-black/40 shadow-sm transition-colors">
                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
               </button>
             </div>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                   Whiteweaver
                 </Link>
                 <div className="flex items-center space-x-2">
-                  <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-white/40 hover:bg-white/60 border border-white/60 shadow-sm transition-colors">
+                  <button aria-label="Toggle theme" onClick={toggleInvert} title={invertOn ? 'Disable color invert' : 'Invert colors'} className="rounded-full p-2 bg-black/25 hover:bg-black/35 border border-black/40 shadow-sm transition-colors">
                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
                   </button>
                   <button onClick={toggleMenu} aria-label="Toggle menu" className="relative w-6 h-6">

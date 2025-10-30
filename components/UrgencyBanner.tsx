@@ -38,21 +38,21 @@ export default function UrgencyBanner() {
   const formatNumber = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <div className="bg-[var(--text-active)] text-[var(--bg)] py-3 px-4 sticky top-0 z-[100] border-b border-[var(--line)]">
+    <div className="bg-[var(--text-active)] text-[var(--bg)] py-3 max-[418px]:py-1.5 px-4 max-[418px]:px-2 sticky top-0 z-[100] border-b border-[var(--line)]">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-        <div className="flex items-center gap-2 flex-wrap justify-center">
-          <span className="font-display font-semibold">Founding Client Beta</span>
+        <div className="flex items-center gap-2 max-[418px]:gap-1.5 flex-wrap justify-center">
+          <span className="font-display font-semibold max-[418px]:text-sm">Founding Client Beta</span>
           <span className="hidden sm:inline">—</span>
-          <span className="bg-[var(--bg)] text-[var(--text-active)] px-3 py-1 rounded-full text-sm font-semibold">
+          <span className="bg-[var(--bg)] text-[var(--text-active)] px-3 py-1 max-[418px]:px-2 max-[418px]:py-0.5 rounded-full text-sm max-[418px]:text-xs font-semibold">
             50% off
           </span>
           <span className="hidden sm:inline">—</span>
-          <span className="font-medium">3 slots remaining</span>
+          <span className="font-medium max-[418px]:text-sm">3 slots remaining</span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 max-[418px]:gap-1.5">
           <span className="hidden sm:inline">—</span>
-          <div className="flex items-center gap-1.5 font-body">
+          <div className="flex items-center gap-1.5 max-[418px]:gap-1 font-body text-base max-[418px]:text-sm">
             <TimeUnit value={timeLeft.days} label="d" />
             <span className="opacity-50">:</span>
             <TimeUnit value={timeLeft.hours} label="h" />

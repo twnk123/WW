@@ -201,7 +201,7 @@ const ContactPage: React.FC = () => {
                                 <legend className="block text-sm font-medium text-text-active mb-3">
                                     {t('contact.form.inquiryType.question')} / {t('contact.form.inquiryType.order')} *
                                 </legend>
-                                <div className="inline-flex rounded-xl border border-accent/20 bg-white overflow-hidden">
+                                <div className="inline-flex gap-3 rounded-xl p-1 bg-white border border-accent/20">
                                     <label className="relative cursor-pointer">
                                         <input
                                             type="radio"
@@ -213,7 +213,7 @@ const ContactPage: React.FC = () => {
                                             disabled={status === 'sending'}
                                             className="sr-only peer"
                                         />
-                                        <span className="block px-6 py-3 text-sm font-medium transition-colors peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 text-text-active/60 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
+                                        <span className="block px-6 py-3 text-sm font-medium transition-all text-text-active peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:!text-text-active peer-checked:scale-105 peer-checked:shadow-md rounded-lg peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
                                             {t('contact.form.inquiryType.question')}
                                         </span>
                                     </label>
@@ -228,7 +228,7 @@ const ContactPage: React.FC = () => {
                                             disabled={status === 'sending'}
                                             className="sr-only peer"
                                         />
-                                        <span className="block px-6 py-3 text-sm font-medium transition-colors peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 text-text-active/60 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
+                                        <span className="block px-6 py-3 text-sm font-medium transition-all text-text-active peer-checked:bg-gradient-to-r peer-checked:from-accent peer-checked:to-purple-500 peer-checked:!text-text-active peer-checked:scale-105 peer-checked:shadow-md rounded-lg peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2 peer-disabled:opacity-50 peer-disabled:cursor-not-allowed">
                                             {t('contact.form.inquiryType.order')}
                                         </span>
                                     </label>
