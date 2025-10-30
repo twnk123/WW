@@ -61,10 +61,10 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
-  const seoTitle = 'MVP Development in 3 Days | AI-Powered Web Development | WHITEWEAVER';
+  const seoTitle = 'MVP in 3 Days | AI Web Development | WHITEWEAVER';
 
   const baseDesc = t('home.services.subtitle') as string;
-  const description = `Launch your MVP in 3 days, not months. ${baseDesc} React, Node.js development. Serving startups globally across Europe and North America. From €250.`;
+  const description = `Launch your MVP in 3 days. AI-accelerated React/Node.js development for startups worldwide. Fixed pricing from €250. Money-back guarantee.`;
 
   return (
     <div>

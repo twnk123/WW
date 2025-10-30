@@ -536,9 +536,9 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  const servicesSeoTitle = 'Web Development Services, Ecommerce & AI Integration — WHITEWEAVER Studio';
+  const servicesSeoTitle = 'Web Dev Services, Ecommerce & AI | WHITEWEAVER';
   const servicesDescBase = t('services.subtitle') as string;
-  const servicesDesc = `${servicesDescBase} Location: Slovenia (Ljubljana).`;
+  const servicesDesc = `AI-powered web development combining expert engineering with automation. React, Node.js, e-commerce, and AI integration. From spec to deployment in days.`;
 
   return (
     <div className="min-h-screen overflow-hidden bg-bg">
