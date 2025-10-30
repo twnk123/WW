@@ -39,8 +39,8 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen overflow-hidden bg-gradient-to-b from-transparent via-accent/5 to-transparent">
       <Seo
-        title={`About WHITEWEAVER | AI-Powered Web Development Team | Slovenia`}
-        description={`Meet the team behind WHITEWEAVER. ${t('about.subtitle')} AI-accelerated development with human expertise. Based in Ljubljana, Slovenia.`}
+        title={`About WHITEWEAVER | AI-Powered Web Development Team`}
+        description={`Meet the team behind WHITEWEAVER. ${t('about.subtitle')} AI-accelerated development with human expertise. Serving startups worldwide.`}
         canonical="/about"
         alternates={[
           { hrefLang: 'en', href: '/about' },

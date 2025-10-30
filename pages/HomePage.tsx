@@ -61,10 +61,10 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
-  const seoTitle = 'MVP Development in 3 Days | AI-Powered Web Development | WHITEWEAVER Slovenia';
+  const seoTitle = 'MVP Development in 3 Days | AI-Powered Web Development | WHITEWEAVER';
 
   const baseDesc = t('home.services.subtitle') as string;
-  const description = `Launch your MVP in 3 days, not months. ${baseDesc} React, Node.js development. Serving startups in Slovenia (Ljubljana). From €250.`;
+  const description = `Launch your MVP in 3 days, not months. ${baseDesc} React, Node.js development. Serving startups globally across Europe and North America. From €250.`;
 
   return (
     <div>
@@ -95,8 +95,8 @@ const HomePage: React.FC = () => {
             '@type': 'ProfessionalService',
             name: 'WHITEWEAVER Studio',
             url: window.location.origin,
-            description: 'AI-powered web development agency specializing in rapid MVP development, custom web applications, and automation. Delivering production-ready software in 3 days.',
-            areaServed: ['Slovenia', 'Ljubljana', 'Europe'],
+            description: 'AI-powered web development agency specializing in rapid MVP development, custom web applications, and automation. Delivering production-ready software in 3 days to clients worldwide.',
+            areaServed: ['Europe', 'North America', 'United States', 'United Kingdom', 'Germany', 'France', 'Canada', 'Worldwide'],
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'SI',
