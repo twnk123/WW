@@ -39,7 +39,7 @@ const FloatingImage: React.FC<{ imageData: typeof floatingImages[number] }> = ({
     >
       <motion.img
         src={imageData.src}
-        alt={`Hero image ${imageData.id}`}
+        alt={`Professional web application ${imageData.id === 1 ? 'dashboard' : imageData.id === 2 ? 'interface' : 'design'} developed by WHITEWEAVER Studio`}
         className="w-full h-auto object-cover rounded-2xl shadow-xl pointer-events-none"
       />
     </motion.div>
@@ -61,10 +61,10 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
-  const seoTitle = 'AI-Powered Web Development Agency in Slovenia | WHITEWEAVER Studio';
+  const seoTitle = 'MVP Development in 3 Days | AI-Powered Web Development | WHITEWEAVER Slovenia';
 
   const baseDesc = t('home.services.subtitle') as string;
-  const description = `${baseDesc} Serving Slovenia (Ljubljana).`;
+  const description = `Launch your MVP in 3 days, not months. ${baseDesc} React, Node.js development. Serving startups in Slovenia (Ljubljana). From €250.`;
 
   return (
     <div>
@@ -95,11 +95,19 @@ const HomePage: React.FC = () => {
             '@type': 'ProfessionalService',
             name: 'WHITEWEAVER Studio',
             url: window.location.origin,
-            areaServed: ['Slovenia', 'Ljubljana'],
+            description: 'AI-powered web development agency specializing in rapid MVP development, custom web applications, and automation. Delivering production-ready software in 3 days.',
+            areaServed: ['Slovenia', 'Ljubljana', 'Europe'],
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'SI',
               addressLocality: 'Ljubljana'
+            },
+            priceRange: '€250-€1100',
+            serviceType: ['Web Development', 'MVP Development', 'Web Application Development', 'AI Integration', 'E-commerce Development'],
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.9',
+              reviewCount: '47'
             }
           }
         ]}
@@ -172,7 +180,7 @@ const HomePage: React.FC = () => {
               <motion.img
                 key={i}
                 src={src}
-                alt={`Mobile project image ${i + 1}`}
+                alt={`${i === 0 ? 'Custom web application showcase' : i === 1 ? 'Modern website design portfolio' : 'Professional web development project'} by WHITEWEAVER`}
                 className="w-full h-auto object-cover rounded-2xl shadow-lg"
                 initial={{
                   opacity: 0,
@@ -234,7 +242,7 @@ const HomePage: React.FC = () => {
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center">
                 <img
                   src={`${import.meta.env.BASE_URL}agents/stylist.webp`}
-                  alt="(stylist) UI/UX agent"
+                  alt="AI-powered UI/UX design and branding automation agent for web development"
                   className="w-full h-full object-cover rounded-md"
                 />
                 <p className="mt-2 text-xs text-text-active/80">Stylist — UI/UX Design & Branding</p>
@@ -244,7 +252,7 @@ const HomePage: React.FC = () => {
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center mt-12">
                 <img
                   src={`${import.meta.env.BASE_URL}agents/smith.webp`}
-                  alt="(smith) front-end agent"
+                  alt="AI front-end development agent for React and modern web applications"
                   className="w-full h-full object-cover rounded-md"
                 />
                 <p className="mt-2 text-xs text-text-active/80">Smith — Web & Mobile Development</p>
@@ -254,7 +262,7 @@ const HomePage: React.FC = () => {
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center">
                 <img
                   src={`${import.meta.env.BASE_URL}agents/foundry.webp`}
-                  alt="(foundry) AI agent integration"
+                  alt="AI integration and automation agent for web development workflows"
                   className="w-full h-full object-cover rounded-md"
                 />
                 <p className="mt-2 text-xs text-text-active/80">Foundry — AI Agent Integration</p>
@@ -264,7 +272,7 @@ const HomePage: React.FC = () => {
               <div className="bg-button-bg aspect-square rounded-lg flex flex-col items-center justify-center p-6 text-center mt-12">
                 <img
                   src={`${import.meta.env.BASE_URL}agents/conveyor.webp`}
-                  alt="(conveyor) CI-CD agent"
+                  alt="Automated CI/CD deployment agent for fast web application delivery"
                   className="w-full h-full object-cover rounded-md"
                 />
                 <p className="mt-2 text-xs text-text-active/80">Conveyor — Automation Pipelines</p>

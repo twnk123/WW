@@ -94,8 +94,8 @@ const ContactPage: React.FC = () => {
     return (
         <div className="min-h-screen overflow-hidden bg-gradient-to-b from-transparent via-accent/5 to-transparent">
             <Seo
-                title={`Get a Quote — Web Development Agency | WHITEWEAVER Studio`}
-                description={t('contact.subtitle')}
+                title={`Get a Free Quote | Contact Web Development Agency | WHITEWEAVER Slovenia`}
+                description={`Contact WHITEWEAVER for your MVP or web app project. ${t('contact.subtitle')} Free 15-min strategy session. Based in Ljubljana, Slovenia.`}
                 canonical="/contact"
                 alternates={[
                   { hrefLang: 'en', href: '/contact' },
