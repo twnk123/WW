@@ -124,8 +124,10 @@ const HomePage: React.FC = () => {
 
           <div className="max-w-4xl mx-auto px-6 md:px-10 z-20 relative">
             <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-tight">
-              <AnimatedText text={t('home.hero.line1')} el="span" className="block" />
-              <AnimatedText text={t('home.hero.line2')} el="span" className="block" />
+              <AnimatedText text="WE BUILD YOUR MVP" el="span" className="block" />
+              <AnimatedText text="IN UNDER 5 DAYS" el="span" className="block" />
+              <AnimatedText text="OR YOU GET YOUR" el="span" className="block" />
+              <AnimatedText text="MONEY BACK" el="span" className="block" />
             </h1>
             <ScrollReveal delay={0.6}>
               <p className="mt-6 text-lg text-text-active/80 max-w-xl mx-auto">{t('home.hero.subtitle')}</p>
@@ -136,9 +138,6 @@ const HomePage: React.FC = () => {
                   {t('home.hero.startBuild')}
                 </Button>
               </a>
-              <Button to="/services" variant="navbar">
-                {t('home.hero.seeHow')}
-              </Button>
             </ScrollReveal>
           </div>
 
@@ -159,7 +158,7 @@ const HomePage: React.FC = () => {
         <div className="flex flex-col pt-32 pb-16 px-6 lg:hidden">
           <div className="text-center">
             <h1 className="font-display text-6xl font-medium tracking-tighter leading-tight uppercase">
-              <AnimatedText text={t('home.hero.mobileTitle')} el="span" />
+              <AnimatedText text="WE BUILD YOUR MVP IN UNDER 5 DAYS OR YOU GET YOUR MONEY BACK" el="span" />
             </h1>
             <ScrollReveal delay={0.3}>
               <p className="mt-6 text-base text-text-active/80 max-w-md mx-auto">{t('home.hero.subtitle')}</p>
@@ -170,9 +169,6 @@ const HomePage: React.FC = () => {
                   {t('home.hero.startBuild')}
                 </Button>
               </a>
-              <Button to="/services" variant="navbar" className="w-full max-w-xs">
-                {t('home.hero.seeHow')}
-              </Button>
             </ScrollReveal>
           </div>
           <div className="mt-16 space-y-8">
@@ -202,7 +198,7 @@ const HomePage: React.FC = () => {
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <ScrollReveal className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter">{t('home.featured.title')}</h2>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter">{t('home.featured.title')}</h2>
           </ScrollReveal>
           <motion.div
             className="grid md:grid-cols-2 gap-8"
@@ -216,9 +212,64 @@ const HomePage: React.FC = () => {
             ))}
           </motion.div>
           <ScrollReveal className="text-center mt-12">
-            <Button to="/work" variant="secondary">
+            <Button to="/work" variant="secondary" style={{ borderColor: '#0E5F63' }}>
               {t('home.featured.viewAll')}
             </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Why We Exist Section */}
+      <section className="py-16 md:py-24 pb-32 md:pb-48">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <ScrollReveal>
+            <div className="text-center">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8">
+                Why We Exist
+              </h2>
+              <div className="relative w-full max-w-4xl mx-auto h-[2px] mb-12">
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(to right, transparent 0%, #0E5F63 20%, #0E5F63 80%, transparent 100%)',
+                  }}
+                />
+              </div>
+              <div className="max-w-3xl mx-auto space-y-6 text-left md:text-center">
+                <ScrollReveal delay={0.2}>
+                  <p className="text-lg md:text-xl text-text-active leading-relaxed">
+                    <span className="font-semibold">We saw a problem:</span> Startups with game-changing ideas were bleeding opportunity. Traditional agencies demanded €20,000+ and wasted 3-6 months of runway. DIY platforms handed them amateur templates that screamed "cheap."
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.3}>
+                  <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-bold" style={{ color: '#0E5F63' }}>
+                    Every day you wait is a day your competitors launch. Your window is closing.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.4}>
+                  <p className="text-lg md:text-xl text-text-active leading-relaxed">
+                    So we built the antidote. AI automation + expert oversight = <span className="font-semibold">months compressed into 5 days.</span> Production-ready code. Zero corners cut. Fixed pricing. Money-back guarantee.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.5}>
+                  <p className="text-xl md:text-2xl font-semibold text-text-active leading-relaxed">
+                    Our mission: Professional web development for every startup—at a price you can afford, delivered while your competitors are still waiting for quotes.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.6}>
+                  <div className="pt-8">
+                    <a href="https://calendly.com/tonklis-vodopivec/30min" target="_blank" rel="noopener noreferrer">
+                      <Button variant="navbar" className="text-lg px-8 py-4">
+                        Lock In Founding Rates →
+                      </Button>
+                    </a>
+                    <p className="mt-4 text-sm text-red-600 font-semibold">
+                      Only 3 founding client spots left forever
+                    </p>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -233,7 +284,7 @@ const HomePage: React.FC = () => {
             <p className="text-text-active/80 mb-8">
               {t('home.services.subtitle')}
             </p>
-            <Button to="/services" variant="secondary">
+            <Button to="/services" variant="secondary" style={{ border: '2px solid #0E5F63' }}>
               {t('home.services.button')}
             </Button>
           </ScrollReveal>
@@ -286,57 +337,104 @@ const HomePage: React.FC = () => {
 
       {/* Pricing Section */}
       <section className="pb-24 md:pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-10">
           <ScrollReveal className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter">{t('home.pricing.title')}</h2>
             <p className="mt-4 text-lg text-text-active/80 max-w-2xl mx-auto">
               {t('home.pricing.subtitle')}
             </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {plans.map((plan, index) => {
-              const hasDiscount = index >= 1; // Core, Pro, and Scale have discount
-              const discountPercent = index === 1 ? 0.50 : index === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
+              const isPopular = index === 1;
+              const isPremium = index === 2;
+              const hasDiscount = index >= 1;
+              const discountPercent = index === 1 ? 0.30 : 0.50;
               const originalPrice = parseInt(plan.price.replace(/[^0-9]/g, ''));
-              const discountedPrice = Math.round(originalPrice * (1 - discountPercent));
+              const discountedPrice = index === 1 ? 700 : Math.round(originalPrice * (1 - discountPercent));
 
               return (
               <ScrollReveal key={plan.name} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  transition={{ duration: 0.22 }}
-                  className="border border-line rounded-lg p-8 h-full flex flex-col"
-                >
-                  <h2 className="font-display text-3xl font-medium tracking-tighter">{plan.name}</h2>
-                  <p className="text-text-active/70 my-2">{plan.description}</p>
-                  {hasDiscount ? (
-                    <div className="flex items-baseline gap-3 my-4">
-                      <span className="font-display text-5xl font-bold text-red-600">€{discountedPrice}</span>
-                      <span className="font-display text-3xl font-medium text-text-active/40 line-through">{plan.price}</span>
+                <div className="relative">
+                  {hasDiscount && (
+                    <div className="absolute -top-3 -right-3 z-20">
+                      <div className="relative">
+                        <div className="bg-gradient-to-br from-red-500 to-red-600 text-white px-4 py-2 rounded-lg shadow-xl transform rotate-3">
+                          <div className="font-bold text-sm">{Math.round(discountPercent * 100)}% OFF</div>
+                          <div className="text-xs opacity-90">Founding Clients</div>
+                        </div>
+                      </div>
                     </div>
-                  ) : (
-                    <p className="font-display text-5xl font-bold my-4">{plan.price}</p>
                   )}
-                  <ul className="space-y-2 text-text-active/80 flex-grow mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center">
-                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button to="/contact" className="w-full">
-                    {t('home.pricing.choosePlan')}
-                  </Button>
-                </motion.div>
+                  {isPopular && (
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <span className="px-4 py-1 bg-accent text-black text-xs font-semibold rounded-full whitespace-nowrap shadow-lg" style={{ border: '2px solid #0E5F63' }}>
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative h-full rounded-2xl p-7 flex flex-col bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
+                    style={{ border: '1px solid #0E5F63' }}
+                  >
+                    <div className="mb-4">
+                      <h3 className="font-display text-3xl font-medium tracking-tight mb-1">
+                        {plan.name}
+                      </h3>
+                      <p className="text-sm text-text-active leading-relaxed">
+                        {plan.description}
+                      </p>
+                    </div>
+
+                    <div className="mb-6">
+                      {hasDiscount ? (
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-display text-4xl font-bold tracking-tight text-red-600">
+                            €{discountedPrice}
+                          </span>
+                          <span className="font-display text-2xl font-medium tracking-tight text-text-active/40 line-through">
+                            {plan.price}
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="font-display text-4xl font-bold tracking-tight">
+                          {plan.price}
+                        </span>
+                      )}
+                    </div>
+
+                    <ul className="space-y-2 mb-8 flex-1">
+                      {plan.features.map((feature, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.1 + i * 0.05 }}
+                          className="flex items-start gap-2 text-sm text-text-active"
+                        >
+                          <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{feature}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    <Button to="/contact" variant="navbar" className="w-full">
+                      {t('home.pricing.choosePlan')}
+                    </Button>
+                  </motion.div>
+                </div>
               </ScrollReveal>
               );
             })}
           </div>
           <ScrollReveal className="text-center mt-12">
-            <Button to="/plans" variant="secondary">
+            <Button to="/plans" variant="secondary" style={{ borderColor: '#0E5F63' }}>
               {t('home.pricing.viewAll')}
             </Button>
           </ScrollReveal>

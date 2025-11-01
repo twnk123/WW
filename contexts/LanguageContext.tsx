@@ -101,7 +101,7 @@ const translations: Record<Language, any> = {
         viewWork: 'View Our Work',
         seePlans: 'See Plans & Pricing',
         buildTogether: "Let's build together",
-        startProject: 'Start a project'
+        startProject: 'Get a 15-min Strategy Session'
       }
     },
     work: {
@@ -128,7 +128,7 @@ const translations: Record<Language, any> = {
       timeline: 'Timeline',
       category: 'Category',
       viewLiveSite: 'View Live Site',
-      startSimilar: 'Start a similar project',
+      startSimilar: 'Get a 15-min Strategy Session',
       challenge: 'The Challenge',
       approach: 'Our Approach',
       visualJourney: 'Visual Journey',
@@ -156,7 +156,7 @@ const translations: Record<Language, any> = {
       beFirst: 'Be the first to know when these services launch',
       readyToBuild: 'Ready to Build Something Amazing?',
       readyToBuildSubtitle: "Let's discuss how our AI-powered development can transform your next project.",
-      startProject: 'Start Your Project',
+      startProject: 'Get a 15-min Strategy Session',
       viewPlans: 'View Plans',
       marquee: 'Build Fast • Ship Quality • Scale Effortlessly • AI-Powered • Expert-Driven •',
       
@@ -609,19 +609,22 @@ const translations: Record<Language, any> = {
         aiSearch: 'AI Search',
         support: 'Support & Updates',
         rows: [
-          { name: 'Pages Included', starter: '2 pages', core: '5 pages', pro: '8 pages', scale: '12 pages' },
-          { name: 'Delivery Time', starter: '24 hours', core: '1-2 days', pro: '2-3 days', scale: '3-5 days' },
-          { name: 'Revision Rounds', starter: '1', core: '2', pro: '4', scale: '5' },
-          { name: 'Contact Form', starter: '✓', core: '✓', pro: '✓', scale: '✓' },
-          { name: 'Found on Google', starter: '✓', core: '✓', pro: '✓', scale: '✓' },
-          { name: 'Found on Maps & AI', starter: '—', core: '✓', pro: '✓', scale: '✓' },
-          { name: 'Customer Login', starter: '—', core: '—', pro: 'Optional', scale: '✓' },
-          { name: 'Online Shop', starter: '—', core: '—', pro: 'Up to 12 items', scale: 'Unlimited' },
-          { name: 'Accept Payments', starter: '—', core: '—', pro: 'Optional', scale: '✓' },
-          { name: 'Admin Dashboard', starter: '—', core: '—', pro: '—', scale: '✓' },
-          { name: 'Edit Content Yourself', starter: '—', core: '—', pro: '✓', scale: '✓' },
-          { name: 'Free Updates Period', starter: '—', core: '—', pro: '1 month', scale: '1 month' },
-          { name: 'Special Features (Maps, Gallery, etc.)', starter: '—', core: 'Choose 2', pro: 'All included', scale: 'All included' }
+          { name: 'Pages Included', starter: '2 pages', pro: '8 pages', scale: '12 pages' },
+          { name: 'Delivery Time', starter: '24 hours', pro: '2-3 days', scale: '3-5 days' },
+          { name: 'Revision Rounds', starter: '1', pro: '2', scale: '5' },
+          { name: 'Contact Form', starter: '✓', pro: '✓', scale: '✓' },
+          { name: 'Click-to-call/WhatsApp', starter: '✓', pro: '✓', scale: '✓' },
+          { name: 'AI-Powered Search', starter: 'Optional', pro: '✓', scale: '✓' },
+          { name: 'Google Maps Integration', starter: '—', pro: '✓', scale: '✓' },
+          { name: 'User Login System', starter: '—', pro: 'Optional', scale: '✓' },
+          { name: 'Online Store', starter: '—', pro: 'Optional', scale: '✓' },
+          { name: 'Payment Processing', starter: '—', pro: '—', scale: '✓' },
+          { name: 'Admin Dashboard', starter: '—', pro: '—', scale: '✓' },
+          { name: 'Customer Management', starter: '—', pro: '—', scale: '✓' },
+          { name: 'Site Editing Access', starter: '—', pro: '✓', scale: '✓' },
+          { name: 'Alert Notifications', starter: '—', pro: '✓', scale: '✓' },
+          { name: 'Free Updates Period', starter: '—', pro: '1 month', scale: '1 month' },
+          { name: 'Training Included', starter: '—', pro: '—', scale: '✓' }
         ]
       },
       stats: [

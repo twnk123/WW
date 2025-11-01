@@ -233,7 +233,8 @@ const ProcessTimeline: React.FC<{
       {/* Progress Bar */}
       <div className="hidden lg:block absolute left-20 top-0 bottom-0 w-0.5 bg-line">
         <motion.div
-          className="w-full bg-gradient-to-b from-accent to-accent/50"
+          className="w-full"
+          style={{ backgroundColor: '#0E5F63' }}
           initial={{ height: "0%" }}
           animate={{ height: `${(activeStep + 1) * (100 / steps.length)}%` }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -267,11 +268,12 @@ const ProcessTimeline: React.FC<{
             <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:w-40">
               <motion.div
                 className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full border-2 transition-colors duration-300 ${
-                  index <= activeStep ? 'bg-accent border-accent' : 'bg-bg border-line'
+                  index <= activeStep ? 'bg-bg border-line' : 'bg-bg border-line'
                 }`}
+                style={index <= activeStep ? { borderColor: '#0E5F63', backgroundColor: '#0E5F63' } : {}}
                 whileHover={prefersReducedMotion ? {} : { scale: 1.1 }}
               >
-                <span className="text-lg font-bold text-text-active">
+                <span className={`text-lg font-bold ${index <= activeStep ? 'text-white' : 'text-text-active'}`}>
                   {step.number}
                 </span>
               </motion.div>
@@ -288,7 +290,7 @@ const ProcessTimeline: React.FC<{
               <p className="text-text-active mb-6 leading-relaxed">
                 {step.description}
               </p>
-              <div className="bg-white/40 border border-line rounded-xl p-4 md:p-6">
+              <div className="bg-white/40 rounded-xl p-4 md:p-6" style={{ border: '1px solid #0E5F63' }}>
                 <h4 className="font-medium mb-3">{t('services.process.deliverables')}</h4>
                 <ul className="grid md:grid-cols-2 gap-3">
                   {step.deliverables.map((item, idx) => (
@@ -362,7 +364,7 @@ const ComparisonTable: React.FC = () => {
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-line">
+          <tr style={{ borderBottom: '1px solid #0E5F63' }}>
             <th className="text-left py-4 px-4 font-medium">{t('services.comparison.feature')}</th>
             <th className="text-center py-4 px-4 font-medium">{t('services.comparison.aiOnly')}</th>
             <th className="text-center py-4 px-4 font-medium">{t('services.comparison.traditional')}</th>
@@ -373,7 +375,8 @@ const ComparisonTable: React.FC = () => {
           {features.map((row, index) => (
             <motion.tr
               key={row.feature}
-              className="border-b border-accent/10 hover:bg-gradient-to-r hover:from-accent/5 hover:to-purple-500/5 transition-all"
+              className="hover:bg-gradient-to-r hover:from-accent/5 hover:to-purple-500/5 transition-all"
+              style={{ borderBottom: '1px solid #0E5F63' }}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.05 }}
@@ -683,7 +686,8 @@ const ServicesPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white border border-accent/20 rounded-2xl p-6 md:p-10 shadow-lg"
+            className="bg-white rounded-2xl p-6 md:p-10 shadow-lg"
+            style={{ border: '1px solid #0E5F63' }}
           >
             <ComparisonTable />
           </motion.div>
@@ -712,7 +716,7 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Sneak Peek Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-transparent via-button-bg/30 to-transparent">
+      <section className="py-24 md:py-32" style={{ background: 'linear-gradient(to bottom, transparent, rgba(14, 95, 99, 0.1), transparent)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -720,7 +724,7 @@ const ServicesPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-8 py-4 bg-accent/20 text-accent rounded-full text-xl font-bold mb-6 border-2 border-accent/30">
+            <span className="inline-block px-8 py-4 rounded-full text-xl font-bold mb-6 border-2" style={{ backgroundColor: 'rgba(14, 95, 99, 0.2)', color: '#0E5F63', borderColor: 'rgba(14, 95, 99, 0.3)', textShadow: '0 2px 8px rgba(14, 95, 99, 0.3)' }}>
               {t('services.comingSoon')}
             </span>
             <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
@@ -777,7 +781,7 @@ const ServicesPage: React.FC = () => {
       {/* Marquee Section */}
       <section className="py-16 overflow-hidden border-t border-line">
         <div className="marquee-content whitespace-nowrap">
-          <span className="inline-block font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider text-accent/20 uppercase">
+          <span className="inline-block font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider uppercase" style={{ color: 'rgba(14, 95, 99, 0.2)' }}>
             {t('services.marquee')} {t('services.marquee')}
           </span>
         </div>
@@ -791,7 +795,11 @@ const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-12 md:p-20 border border-accent/20"
+              className="rounded-2xl p-12 md:p-20"
+              style={{
+                background: 'linear-gradient(to bottom right, rgba(14, 95, 99, 0.1), rgba(14, 95, 99, 0.05))',
+                border: '1px solid #0E5F63'
+              }}
             >
               <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6">
                 {t('services.readyToBuild')}
@@ -800,8 +808,8 @@ const ServicesPage: React.FC = () => {
                 {t('services.readyToBuildSubtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button to="/contact" size="lg">{t('services.startProject')}</Button>
-                <Button to="/plans" variant="secondary" size="lg">{t('services.viewPlans')}</Button>
+                <Button to="/contact" variant="navbar" size="lg">{t('services.startProject')}</Button>
+                <Button to="/plans" variant="navbar" size="lg">{t('services.viewPlans')}</Button>
               </div>
             </motion.div>
           </div>

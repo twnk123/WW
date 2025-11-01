@@ -167,7 +167,7 @@ const ContactPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-12 items-start">
                     <ScrollReveal>
                         <div className="sticky top-8">
-                            <div className="bg-gradient-to-br from-white to-accent/5 border border-accent/20 p-10 rounded-3xl shadow-2xl">
+                            <div className="bg-gradient-to-br from-white to-accent/5 p-10 rounded-3xl shadow-2xl" style={{ border: '2px solid #0E5F63' }}>
                                 <h3 className="font-display text-3xl font-medium tracking-tighter mb-8 bg-gradient-to-br from-text-active to-accent bg-clip-text text-transparent">{t('contact.details.title')}</h3>
                                 <div className="space-y-6">
                                     <div className="flex items-start gap-4">
@@ -280,10 +280,9 @@ const ContactPage: React.FC = () => {
                                         className="w-full bg-white border border-accent/20 p-4 rounded-xl focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         <option value="">{t('contact.form.packagePlaceholder')}</option>
-                                        <option value="starter">Starter - €250</option>
-                                        <option value="core">Core - €500</option>
-                                        <option value="pro">Pro - €750</option>
-                                        <option value="scale">Scale - €1,100</option>
+                                        <option value="starter">Starter - €200</option>
+                                        <option value="pro">Pro - €700 (30% off)</option>
+                                        <option value="scale">Scale - €1,100 (50% off)</option>
                                         <option value="custom">Custom Project</option>
                                     </select>
                                 </div>

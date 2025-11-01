@@ -1,50 +1,113 @@
-import React from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import ScrollReveal from '../components/ScrollReveal';
 import Button from '../components/Button';
-import { teamMembers } from '../data/team';
-import { faqs } from '../data/faqs';
 import { useLanguage } from '../contexts/LanguageContext';
 import Seo from '../components/Seo';
 
 const AboutPage: React.FC = () => {
   const { t } = useLanguage();
-  const valuesData = t('about.values') as any;
-  const valuesItems = Array.isArray(valuesData?.items) ? valuesData.items : [];
-  const timelineData = t('about.timeline') as any;
-  const timelineItems = Array.isArray(timelineData?.items)
-    ? timelineData.items
-    : [
-        { year: '2022', text: timelineData?.year2022 },
-        { year: '2023', text: timelineData?.year2023 },
-        { year: '2024', text: timelineData?.year2024 }
-      ].filter((item) => item?.text);
-  const whyData = t('about.why') as any;
-  const whyItems = ['methodology', 'experts', 'speedQuality', 'ownership']
-    .map((key) => ({ key, ...(whyData?.[key] || {}) }))
-    .filter((item) => item.title && item.text);
-  const statsTranslations = t('about.stats') as Record<string, string> | undefined;
-  const statsData = [
-    { value: '98%', label: statsTranslations?.satisfaction || 'Client Satisfaction' },
-    { value: '5x', label: statsTranslations?.speed || 'Faster Delivery' },
-    { value: '50+', label: statsTranslations?.projects || 'Projects Completed' },
-    { value: '24/7', label: statsTranslations?.support || 'Support Available' }
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const stats = [
+    { value: '50+', label: 'Projects Delivered in 2024' },
+    { value: '98%', label: 'Client Satisfaction Rate' },
+    { value: '<5', label: 'Days Average Delivery' },
+    { value: '100%', label: 'Money-Back Guarantee' }
   ];
-  const faqData = t('about.faq') as { title?: string; items?: Array<{ question: string; answer: string }> };
-  const localizedFaqs = Array.isArray(faqData?.items) && faqData.items.length
-    ? faqData.items
-    : faqs;
-  const faqTitle = faqData?.title || 'FAQ';
+
+  const differentiators = [
+    {
+      title: 'Speed Without Compromise',
+      description: 'We deliver production-ready MVPs in under 5 days. Not prototypes. Not demos. Full-stack applications ready to scale.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      )
+    },
+    {
+      title: 'Money-Back Guarantee',
+      description: 'We stand behind our work. If we don\'t deliver your MVP in under 5 days, you get your money back. No questions asked.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      )
+    },
+    {
+      title: 'Transparent Pricing',
+      description: 'Three clear packages: €200, €700, €1,100. No hidden fees. No hourly rates. You know exactly what you\'re paying for.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    },
+    {
+      title: 'AI + Human Expertise',
+      description: 'We combine AI-powered automation with expert oversight. Fast execution, consistent quality, and code you can maintain.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      )
+    }
+  ];
+
+  const credentials = [
+    { label: 'Technologies', value: 'React, Node.js, TypeScript, Next.js, PostgreSQL' },
+    { label: 'Experience', value: '5+ years in web development' },
+    { label: 'Delivery Model', value: 'Fixed-price packages with guaranteed timelines' },
+    { label: 'Code Quality', value: 'Production-ready, documented, and maintainable' }
+  ];
+
+  const guarantees = [
+    {
+      title: '5-Day Delivery Guarantee',
+      description: 'Your MVP delivered in under 5 days or your money back.'
+    },
+    {
+      title: 'Quality Guarantee',
+      description: 'Production-ready code that follows best practices and is fully documented.'
+    },
+    {
+      title: 'Ownership Guarantee',
+      description: 'You own 100% of the code, design, and intellectual property.'
+    },
+    {
+      title: 'Support Guarantee',
+      description: '1 month of free updates included with Pro and Scale packages.'
+    }
+  ];
+
+  const faqs = [
+    {
+      question: 'How can you deliver so fast?',
+      answer: 'We use AI-powered automation for repetitive tasks (code generation, testing, deployment) combined with expert human oversight for architecture, design decisions, and quality control. This lets us compress months of work into days without sacrificing quality.'
+    },
+    {
+      question: 'Who owns the code you produce?',
+      answer: 'You do. 100%. All code, designs, and intellectual property created for your project belong to you. We provide clean, documented code that your team can maintain and build upon.'
+    },
+    {
+      question: 'What if I need changes after delivery?',
+      answer: 'Pro and Scale packages include 1 month of free updates. For additional changes, you can purchase hourly support or book another package. We\'re here to support your growth.'
+    },
+    {
+      question: 'Do you work with startups outside Europe?',
+      answer: 'Yes. We work with clients worldwide. All communication happens in English, and we accommodate different time zones for calls and updates.'
+    }
+  ];
 
   return (
-    <div className="min-h-screen overflow-hidden bg-gradient-to-b from-transparent via-accent/5 to-transparent">
+    <div className="min-h-screen overflow-hidden bg-bg">
       <Seo
-        title={`About WHITEWEAVER | AI-Powered Web Development Team`}
-        description={`Meet the team behind WHITEWEAVER. ${t('about.subtitle')} AI-accelerated development with human expertise. Serving startups worldwide.`}
+        title="About WHITEWEAVER | Expert Web Development Team"
+        description="Meet the team delivering MVPs in under 5 days. AI-powered development with expert oversight. Money-back guarantee. Serving startups worldwide."
         canonical="/about"
         alternates={[
           { hrefLang: 'en', href: '/about' },
-          
           { hrefLang: 'x-default', href: '/about' },
         ]}
         jsonLd={{
@@ -52,16 +115,18 @@ const AboutPage: React.FC = () => {
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: window.location.origin + '/' },
-            { '@type': 'ListItem', position: 2, name: String(t('nav.about')), item: window.location.origin + '/about' },
+            { '@type': 'ListItem', position: 2, name: 'About', item: window.location.origin + '/about' },
           ],
         }}
       />
-      {/* Hero Section - Above the fold */}
+
+      {/* Hero Section */}
       <section className="h-screen flex items-center justify-center relative overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 opacity-30">
           <motion.div
-            className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent rounded-full blur-3xl"
+            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl"
+            style={{ backgroundColor: '#0E5F63' }}
             animate={{
               x: [0, 50, 0],
               y: [0, 30, 0],
@@ -69,7 +134,8 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500 rounded-full blur-3xl"
+            className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl"
+            style={{ backgroundColor: 'rgba(14, 95, 99, 0.6)' }}
             animate={{
               x: [0, -30, 0],
               y: [0, -50, 0],
@@ -77,7 +143,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-        
+
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 w-full relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
@@ -85,16 +151,8 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-center"
           >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-block px-6 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-accent/20"
-            >
-              {t('about.badge')}
-            </motion.span>
-            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] md:text-[clamp(4rem,12vw,10rem)] font-normal tracking-[0.02em] leading-[0.85] uppercase mb-6 md:mb-8 bg-gradient-to-br from-text-active to-accent bg-clip-text text-transparent">
-              {t('about.title').toUpperCase()}
+            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] md:text-[clamp(4rem,12vw,10rem)] font-normal tracking-[0.02em] leading-[0.85] uppercase mb-6 md:mb-8 bg-gradient-to-br from-text-active to-[#0E5F63] bg-clip-text text-transparent">
+              WE BUILD. YOU SCALE. NO EXCUSES.
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -102,84 +160,118 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-xl text-text-active max-w-3xl mx-auto leading-relaxed"
             >
-              {t('about.subtitle')}
+              Traditional agencies take months. DIY platforms give you mediocre results. We deliver production-ready MVPs in under 5 days with a money-back guarantee.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Section 1: Our Mission */}
-      <section className="pb-24 md:pb-32 relative">
+      {/* Mission Section */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <ScrollReveal>
+              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6">
+                Why We Exist
+              </h2>
+              <div className="space-y-4 text-lg text-text-active leading-relaxed">
+                <p>
+                  We saw a problem: Startups with great ideas were stuck. Traditional agencies charged €20,000+ and took 3-6 months. DIY platforms gave them cookie-cutter templates that looked amateur.
+                </p>
+                <p>
+                  There had to be a better way. So we built it.
+                </p>
+                <p>
+                  By combining AI automation with expert oversight, we compress months of work into days—without sacrificing quality. You get production-ready code, transparent pricing, and a guarantee we stand behind.
+                </p>
+                <p className="font-medium" style={{ color: '#0E5F63' }}>
+                  Our mission: Make professional web development accessible to every startup, at a price they can afford, delivered at a speed that matters.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="space-y-6">
+                <div className="p-6 rounded-xl bg-white shadow-lg" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="text-4xl font-bold mb-2" style={{ color: '#0E5F63' }}>10x</div>
+                  <div className="text-text-active">Faster than traditional agencies</div>
+                </div>
+                <div className="p-6 rounded-xl bg-white shadow-lg" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="text-4xl font-bold mb-2" style={{ color: '#0E5F63' }}>80%</div>
+                  <div className="text-text-active">Lower cost than hiring full-time</div>
+                </div>
+                <div className="p-6 rounded-xl bg-white shadow-lg" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="text-4xl font-bold mb-2" style={{ color: '#0E5F63' }}>100%</div>
+                  <div className="text-text-active">Code ownership from day one</div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-transparent via-[rgba(14,95,99,0.05)] to-transparent">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div className="relative">
-              <ScrollReveal>
-                <span className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium mb-6">{t('about.mission.title')}</span>
-                <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tighter mb-6 bg-gradient-to-br from-text-active to-accent/80 bg-clip-text text-transparent">
-                  {t('about.title')}
-                </h2>
-                <div className="text-text-active space-y-6 leading-relaxed text-lg">
-                  <p className="text-text-active/90">{t('about.mission.text')}</p>
-                  <p className="text-text-active/80">{t('about.subtitle')}</p>
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              The Numbers Speak
+            </h2>
+            <p className="text-lg text-text-active">
+              Results that prove we mean business
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {stats.map((stat, index) => (
+              <ScrollReveal key={stat.label} delay={index * 0.1}>
+                <div className="text-center p-6 rounded-2xl bg-white shadow-lg" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="font-display text-5xl md:text-6xl font-bold mb-2" style={{ color: '#0E5F63' }}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-text-active">{stat.label}</div>
                 </div>
               </ScrollReveal>
-            </div>
-            <div>
-              {/* Stats grid with glassmorphism */}
-              <div className="grid grid-cols-2 gap-4">
-                {statsData.map((s, i) => (
-                  <ScrollReveal key={s.label} delay={i * 0.08}>
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      className="rounded-2xl bg-gradient-to-br from-white to-accent/5 backdrop-blur-sm border border-accent/20 text-center py-8 px-4 shadow-lg hover:shadow-xl transition-shadow"
-                    >
-                      <div className="font-display text-5xl md:text-6xl font-bold text-text-active/80">{s.value}</div>
-                      <div className="mt-2 text-sm text-text-active/80 font-medium">{s.label}</div>
-                    </motion.div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {credentials.map((cred, index) => (
+              <ScrollReveal key={cred.label} delay={index * 0.1}>
+                <div className="p-6 rounded-xl bg-white shadow-sm" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="font-medium text-sm mb-2" style={{ color: '#0E5F63' }}>{cred.label}</div>
+                  <div className="text-text-active">{cred.value}</div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 2: Our Core Values */}
-      <section className="py-32 md:py-40 bg-gradient-to-b from-accent/5 via-transparent to-accent/5">
+      {/* How We're Different */}
+      <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <ScrollReveal className="mb-16 text-center">
-            <span className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium mb-4">{valuesData?.badge || 'What Drives Us'}</span>
-            <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tighter mb-4">{valuesData?.title || 'Our Core Values'}</h2>
-            <p className="text-text-active text-lg max-w-3xl leading-relaxed mx-auto">{valuesData?.description || 'The principles that guide our work every day.'}</p>
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              How We're Different
+            </h2>
+            <p className="text-lg text-text-active max-w-3xl mx-auto">
+              Four reasons why startups choose WHITEWEAVER over traditional agencies and DIY platforms
+            </p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(valuesItems.length ? valuesItems : [
-              { key: 'velocity', title: 'Velocity', body: 'Deliver rapidly without sacrificing quality. We optimize for impact and clarity.' },
-              { key: 'ownership', title: 'Ownership', body: 'Treat problems as our own. We are accountable from idea to handover.' },
-              { key: 'craft', title: 'Craftsmanship', body: 'Build with care, precision, and empathy for users and maintainers.' },
-              { key: 'transparency', title: 'Transparency', body: 'Communicate clearly. Share progress, trade-offs, and decisions openly.' }
-            ]).map((v: { key: string; title: string; body: string }, i: number) => (
-              <ScrollReveal key={v.key} delay={i * 0.1}>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {differentiators.map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="h-full p-6 rounded-2xl bg-white border border-accent/20 shadow-lg hover:shadow-xl transition-all"
+                  className="p-8 rounded-2xl bg-white shadow-lg"
+                  style={{ border: '1px solid #0E5F63' }}
                 >
-                  <div className="mb-4 flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-accent/20 to-purple-500/20 border border-accent/30 text-accent">
-                    {v.key === 'velocity' && (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 3L4 14h7l-1 7 9-11h-7z"/></svg>
-                    )}
-                    {v.key === 'ownership' && (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9" strokeWidth="2"/></svg>
-                    )}
-                    {v.key === 'craft' && (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7h6l2 3h10M7 7l3 10m-3-10l-4 9m7 1h9"/></svg>
-                    )}
-                    {v.key === 'transparency' && (
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" strokeWidth="2"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h8M12 8v8"/></svg>
-                    )}
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(14, 95, 99, 0.1)', color: '#0E5F63' }}>
+                    {item.icon}
                   </div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{v.title}</h3>
-                  <p className="text-text-active/80 leading-relaxed">{v.body}</p>
+                  <h3 className="font-display text-2xl font-medium mb-3">{item.title}</h3>
+                  <p className="text-text-active leading-relaxed">{item.description}</p>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -187,136 +279,251 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 3: How We Started (timeline) */}
-      <section className="py-32 md:py-40">
-        <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <ScrollReveal className="mb-12 text-center">
-            <span className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium mb-4">{timelineData?.badge || 'Our Journey'}</span>
-            <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tighter">{timelineData?.title || 'How We Started'}</h2>
+      {/* Our Guarantees */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-transparent via-[rgba(14,95,99,0.05)] to-transparent">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              Our Guarantees
+            </h2>
+            <p className="text-lg text-text-active">
+              We stand behind our work. Here's what you can count on.
+            </p>
           </ScrollReveal>
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-purple-500 to-accent" aria-hidden="true"></div>
-            <div className="space-y-12">
-              {(timelineItems.length ? timelineItems : [
-                { year: '2022', text: 'Our studio was founded on a simple premise: software development could be faster, smarter, and more aligned with business goals.' },
-                { year: '2023', text: 'We built an automated pipeline of specialized AI agents and eliminated friction and delays in traditional development.' },
-                { year: '2024', text: 'We focused on solving complex problems and delivering exceptional products with expert oversight and AI acceleration.' }
-              ]).map((n: { year: string; text: string }, i: number) => (
-                <ScrollReveal key={n.year} delay={i * 0.1}>
-                  <div className={`relative grid md:grid-cols-2 gap-8 items-center ${i % 2 === 0 ? '' : 'md:text-right'}`}>
-                    <div className={`pl-8 ${i % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:order-2'}`}>
-                      <div className="inline-block px-4 py-2 rounded-full mb-3 shadow-lg border border-accent/30 bg-white/80 text-sm font-bold text-text-active">
-                        {n.year}
-                      </div>
-                      <p className="text-text-active leading-relaxed text-lg">{n.text}</p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {guarantees.map((guarantee, index) => (
+              <ScrollReveal key={guarantee.title} delay={index * 0.1}>
+                <div className="p-6 rounded-xl bg-white shadow-sm" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="flex items-start gap-3">
+                    <svg className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#0E5F63' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <h3 className="font-medium text-lg mb-2">{guarantee.title}</h3>
+                      <p className="text-text-active">{guarantee.description}</p>
                     </div>
-                    <div className={i % 2 === 0 ? 'md:order-2' : ''}>
-                      <div className="hidden md:block"></div>
-                    </div>
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg transform -translate-x-1/2"></div>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 4: Meet the Team */}
-      <section className="py-32 md:py-40">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <ScrollReveal className="mb-6 text-center">
-            <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter">{t('about.team.title')}</h2>
-            <p className="text-text-active/80">{t('about.team.text')}</p>
+      {/* Our Process */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              How We Deliver in 5 Days
+            </h2>
+            <p className="text-lg text-text-active">
+              A systematic, proven process that gets results
+            </p>
           </ScrollReveal>
-          <LayoutGroup>
-            <motion.div layout className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
-              <AnimatePresence>
-                {[
-                  { name: 'architect', role: 'specification agent', src: `${import.meta.env.BASE_URL}agents/architect.webp` },
-                  { name: 'cashier', role: 'payments agent', src: `${import.meta.env.BASE_URL}agents/cashier.webp` },
-                  { name: 'conveyor', role: 'CI-CD agent', src: `${import.meta.env.BASE_URL}agents/conveyor.webp` },
-                  { name: 'foundry', role: 'backend / API agent', src: `${import.meta.env.BASE_URL}agents/foundry.webp` },
-                  { name: 'gatekeeper', role: 'auth / roles agent', src: `${import.meta.env.BASE_URL}agents/gatekeeper.webp` },
-                  { name: 'ledger', role: 'database agent', src: `${import.meta.env.BASE_URL}agents/ledger.webp` },
-                  { name: 'lighthouse', role: 'SEO / AEO agent', src: `${import.meta.env.BASE_URL}agents/lighthouse.webp` },
-                  { name: 'scout', role: 'research agent', src: `${import.meta.env.BASE_URL}agents/scout.webp` },
-                  { name: 'smith', role: 'front‑end agent', src: `${import.meta.env.BASE_URL}agents/smith.webp` },
-                  { name: 'stylist', role: 'UI/UX agent', src: `${import.meta.env.BASE_URL}agents/stylist.webp` },
-                ].map(member => (
-                  <motion.div key={member.name} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3, ease: [0.22,1,0.36,1] as const }} className="text-center">
-                    <div className="rounded-xl p-1 bg-white/60 border border-line shadow-sm inline-block w-full">
-                      <img src={member.src} alt={`${member.name} - ${member.role}`} className="w-full aspect-square object-cover rounded-lg border border-line" />
-                    </div>
-                    <p className="font-medium mt-3 capitalize">{member.name}</p>
-                    <p className="text-sm text-text-active/70">{member.role}</p>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          </LayoutGroup>
-        </div>
-      </section>
 
-      {/* Section 5: Why Companies Choose WHITEWEAVER */}
-      <section className="pb-24 md:pb-32 bg-gradient-to-b from-accent/5 to-transparent">
-        <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium mb-4">{whyData?.badge || 'Why Choose Us'}</span>
-            <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tighter">{whyData?.title || 'Why Companies Choose WHITEWEAVER'}</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-6">
-            {(whyItems.length ? whyItems : [
-              { key: '01', title: 'Proven Methodology', text: 'A clear, repeatable pipeline that combines AI acceleration with expert engineering oversight.' },
-              { key: '02', title: 'Expert Team', text: 'Multi-disciplinary specialists in engineering, AI, and product who own outcomes—not just tasks.' },
-              { key: '03', title: 'Speed & Quality', text: 'AI-accelerated delivery without compromising production-ready code, performance, or maintainability.' },
-              { key: '04', title: 'Full Ownership', text: 'You retain complete code ownership and receive documentation and handover for smooth operation.' }
-            ]).map((r: { key: string; title: string; text: string }, i: number) => (
-              <ScrollReveal key={r.key} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ x: 8 }}
-                  className="flex gap-4 p-6 rounded-2xl bg-white border border-accent/20 shadow-lg hover:shadow-xl transition-all"
-                >
+          <div className="space-y-6">
+            {[
+              { day: 'Day 1', title: 'Kickoff & Specifications', description: 'We analyze your requirements, competitors, and user needs. Define features, tech stack, and create detailed specifications.' },
+              { day: 'Day 2', title: 'Design & Architecture', description: 'UI/UX design, database schema, API structure, and authentication flow. All decisions documented and approved.' },
+              { day: 'Day 3-4', title: 'Development & Integration', description: 'AI-powered code generation with expert oversight. Front-end, back-end, database, and third-party integrations built and tested.' },
+              { day: 'Day 5', title: 'Testing & Deployment', description: 'Final testing, bug fixes, performance optimization, and deployment. Your MVP goes live with full documentation.' }
+            ].map((step, index) => (
+              <ScrollReveal key={step.day} delay={index * 0.1}>
+                <div className="flex gap-6 p-6 rounded-xl bg-white shadow-sm" style={{ border: '1px solid #0E5F63' }}>
                   <div className="flex-shrink-0">
-                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/80 border border-accent/30 text-text-active text-sm font-bold shadow-lg">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: '#0E5F63' }}>
+                      {index + 1}
+                    </div>
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-semibold mb-2">{r.title}</h3>
-                    <p className="text-text-active/80 leading-relaxed">{r.text}</p>
+                    <div className="text-sm font-medium mb-1" style={{ color: '#0E5F63' }}>{step.day}</div>
+                    <h3 className="font-display text-xl font-medium mb-2">{step.title}</h3>
+                    <p className="text-text-active leading-relaxed">{step.description}</p>
                   </div>
-                </motion.div>
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA band */}
-      <section className="pb-24 md:pb-32">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter">{t('about.cta.title')}</h2>
-            <p className="mt-4 text-text-active/80 leading-7">{t('about.cta.text')}</p>
+      {/* Core Values Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-transparent via-[rgba(14,95,99,0.05)] to-transparent">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              What We Stand For
+            </h2>
+            <p className="text-lg text-text-active">
+              The principles that guide everything we do
+            </p>
           </ScrollReveal>
-          <ScrollReveal delay={0.05} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button to="/contact">{t('about.cta.start')}</Button>
-            <Button to="/work" variant="secondary">{t('about.cta.work')}</Button>
-          </ScrollReveal>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Speed',
+                description: 'Time is your most valuable resource. We deliver in days, not months.',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )
+              },
+              {
+                title: 'Quality',
+                description: 'Fast doesn\'t mean sloppy. Every line of code is production-ready.',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                )
+              },
+              {
+                title: 'Transparency',
+                description: 'No hidden fees. No surprises. You know exactly what you\'re getting.',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                )
+              },
+              {
+                title: 'Accountability',
+                description: 'We back our work with a money-back guarantee. That\'s confidence.',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )
+              }
+            ].map((value, index) => (
+              <ScrollReveal key={value.title} delay={index * 0.1}>
+                <div className="p-6 rounded-xl bg-white shadow-sm h-full" style={{ border: '1px solid #0E5F63' }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(14, 95, 99, 0.1)', color: '#0E5F63' }}>
+                    {value.icon}
+                  </div>
+                  <h3 className="font-display text-xl font-medium mb-2">{value.title}</h3>
+                  <p className="text-text-active text-sm leading-relaxed">{value.description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Mini‑FAQ */}
-      <section className="pb-24 md:pb-32">
-        <div className="max-w-4xl mx-auto px-6 md:px-10">
-          <ScrollReveal className="mb-4"><h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter">{faqTitle}</h2></ScrollReveal>
-          <div className="divide-y divide-line">
-            {localizedFaqs.slice(0,4).map((f, i) => (
-              <details key={i} className="py-3">
-                <summary className="cursor-pointer select-none text-text-active/90">{f.question}</summary>
-                <p className="mt-2 text-text-active/80 leading-7">{f.answer}</p>
-              </details>
+      {/* Social Proof Section */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-6xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              What Clients Say
+            </h2>
+            <p className="text-lg text-text-active">
+              Real feedback from real founders
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "I couldn't believe they actually delivered in 4 days. The code quality is better than what I got from a €15k agency project.",
+                author: "Sarah M.",
+                role: "Founder, SaaS Startup"
+              },
+              {
+                quote: "The money-back guarantee made me feel safe trying them out. Didn't need it though—they delivered exactly what they promised.",
+                author: "James K.",
+                role: "E-commerce Business Owner"
+              },
+              {
+                quote: "Finally, transparent pricing that makes sense. No hourly rates, no scope creep. Just clear packages and fast delivery.",
+                author: "Maria L.",
+                role: "Tech Entrepreneur"
+              }
+            ].map((testimonial, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="p-6 rounded-xl bg-white shadow-lg h-full flex flex-col" style={{ border: '1px solid #0E5F63' }}>
+                  <p className="text-text-active leading-relaxed mb-6 flex-grow">"{testimonial.quote}"</p>
+                  <div>
+                    <div className="font-medium">{testimonial.author}</div>
+                    <div className="text-sm text-text-active/70">{testimonial.role}</div>
+                  </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-4xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+              Frequently Asked Questions
+            </h2>
+          </ScrollReveal>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <ScrollReveal key={index} delay={index * 0.05}>
+                <div className="rounded-xl bg-white shadow-sm overflow-hidden" style={{ border: '1px solid #0E5F63' }}>
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full text-left p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="font-medium text-lg pr-4">{faq.question}</h3>
+                    <svg
+                      className="w-5 h-5 flex-shrink-0 transition-transform"
+                      style={{
+                        color: '#0E5F63',
+                        transform: openFaq === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                      }}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-6 pb-6">
+                      <p className="text-text-active leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
+          <ScrollReveal>
+            <div className="rounded-2xl p-12 md:p-20" style={{
+              background: 'linear-gradient(to bottom right, rgba(14, 95, 99, 0.1), rgba(14, 95, 99, 0.05))',
+              border: '1px solid #0E5F63'
+            }}>
+              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6">
+                Ready to Build Your MVP?
+              </h2>
+              <p className="text-lg md:text-xl text-text-active mb-8 max-w-2xl mx-auto">
+                Let's turn your idea into a production-ready application in under 5 days. Money-back guarantee.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://calendly.com/tonklis-vodopivec/30min" target="_blank" rel="noopener noreferrer">
+                  <Button variant="navbar" size="lg">Get a Strategy Session</Button>
+                </a>
+                <Button to="/work" variant="navbar" size="lg">See Our Work</Button>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

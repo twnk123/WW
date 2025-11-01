@@ -156,137 +156,92 @@ const PlansPage: React.FC = () => {
             {/* Pricing Cards Section */}
             <section className="py-24 md:py-32 relative">
                 <div className="max-w-[1600px] mx-auto px-6 md:px-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                         {plans.map((plan, index) => {
-                            const translatedPlan = translatedPlans[index] ?? {
-                                name: plan.name,
-                                description: plan.description,
-                                features: plan.features
-                            };
-                            const isPopular = index === 1; // Core plan is most popular
-                            const isPremium = index === 3; // Scale plan
-                            const hasDiscount = index >= 1; // Core, Pro, and Scale have discount
-                            const discountPercent = index === 1 ? 0.50 : index === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
+                            const isPopular = index === 1;
+                            const isPremium = index === 2;
+                            const hasDiscount = index >= 1;
+                            const discountPercent = index === 1 ? 0.30 : 0.50;
+                            const originalPrice = parseInt(plan.price.replace(/[^0-9]/g, ''));
+                            const discountedPrice = index === 1 ? 700 : Math.round(originalPrice * (1 - discountPercent));
 
                             return (
-                                <motion.div
-                                    key={plan.name}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    onHoverStart={() => setHoveredPlan(index)}
-                                    onHoverEnd={() => setHoveredPlan(null)}
-                                    className="relative"
-                                >
-                                    {hasDiscount && (
-                                        <div className="absolute -top-3 -right-3 z-20">
-                                            <div className="relative">
-                                                <div className="bg-gradient-to-br from-red-500 to-red-600 text-white px-4 py-2 rounded-lg shadow-xl transform rotate-3">
-                                                    <div className="font-bold text-sm">{Math.round(discountPercent * 100)}% OFF</div>
-                                                    <div className="text-xs opacity-90">Founding Clients</div>
+                                <ScrollReveal key={plan.name} delay={index * 0.1}>
+                                    <div className="relative">
+                                        {hasDiscount && (
+                                            <div className="absolute -top-3 -right-3 z-20">
+                                                <div className="relative">
+                                                    <div className="bg-gradient-to-br from-red-500 to-red-600 text-white px-4 py-2 rounded-lg shadow-xl transform rotate-3">
+                                                        <div className="font-bold text-sm">{Math.round(discountPercent * 100)}% OFF</div>
+                                                        <div className="text-xs opacity-90">Founding Clients</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    )}
-                                    {isPopular && (
-                                        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
-                                            <span className="px-4 py-1 bg-accent text-black text-xs font-semibold rounded-full whitespace-nowrap shadow-lg">
-                                                {t('plans.mostPopular')}
-                                            </span>
-                                        </div>
-                                    )}
+                                        )}
+                                        {isPopular && (
+                                            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+                                                <span className="px-4 py-1 bg-accent text-black text-xs font-semibold rounded-full whitespace-nowrap shadow-lg" style={{ border: '2px solid #0E5F63' }}>
+                                                    Most Popular
+                                                </span>
+                                            </div>
+                                        )}
 
-                                    <motion.div
-                                        whileHover={{ y: -8 }}
-                                        transition={{ duration: 0.3 }}
-                                        className={`relative h-full rounded-2xl p-7 flex flex-col ${
-                                            isPremium 
-                                                ? 'bg-gradient-to-br from-accent/10 to-button-bg border-accent/30' 
-                                                : isPopular
-                                                ? 'bg-gradient-to-br from-white to-accent/5 border-accent/20'
-                                                : 'bg-white border-accent/10'
-                                        } border ${hoveredPlan === index ? 'shadow-2xl' : 'shadow-lg'} transition-all duration-300`}
-                                    >
-                                        {/* Plan Header */}
-                                        <div className="mb-4">
-                                            <h3 className="font-display text-xl font-medium tracking-tight mb-1">
-                                                {translatedPlan.name}
-                                            </h3>
-                                            <p className="text-xs text-text-active leading-relaxed">
-                                                {translatedPlan.description}
-                                            </p>
-                                        </div>
+                                        <motion.div
+                                            whileHover={{ y: -8 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="relative h-full rounded-2xl p-7 flex flex-col bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
+                                            style={{ border: '1px solid #0E5F63' }}
+                                        >
+                                            <div className="mb-4">
+                                                <h3 className="font-display text-3xl font-medium tracking-tight mb-1">
+                                                    {plan.name}
+                                                </h3>
+                                                <p className="text-sm text-text-active leading-relaxed">
+                                                    {plan.description}
+                                                </p>
+                                            </div>
 
-                                        {/* Price */}
-                                        <div className="mb-6">
-                                            {hasDiscount ? (
-                                                <div className="flex items-baseline gap-3">
-                                                    <span className="font-display text-4xl font-bold tracking-tight text-red-600">
-                                                        €{Math.round(parseInt(plan.price.replace(/[^0-9]/g, '')) * (1 - discountPercent))}
-                                                    </span>
-                                                    <span className="font-display text-2xl font-medium tracking-tight text-text-active/40 line-through">
+                                            <div className="mb-6">
+                                                {hasDiscount ? (
+                                                    <div className="flex items-baseline gap-3">
+                                                        <span className="font-display text-4xl font-bold tracking-tight text-red-600">
+                                                            €{discountedPrice}
+                                                        </span>
+                                                        <span className="font-display text-2xl font-medium tracking-tight text-text-active/40 line-through">
+                                                            {plan.price}
+                                                        </span>
+                                                    </div>
+                                                ) : (
+                                                    <span className="font-display text-4xl font-bold tracking-tight">
                                                         {plan.price}
                                                     </span>
-                                                </div>
-                                            ) : (
-                                                <span className="font-display text-4xl font-bold tracking-tight">
-                                                    {plan.price}
-                                                </span>
-                                            )}
-                                        </div>
+                                                )}
+                                            </div>
 
-                                        {/* Features - Show all features */}
-                                        <ul className="space-y-2 mb-8 flex-1">
-                                            {translatedPlan.features.map((feature, i) => {
-                                                if (!feature || feature.includes('💡') || !feature.trim()) return null;
-
-                                                const trimmedFeature = feature.trimStart();
-                                                const normalizedLower = trimmedFeature.toLowerCase();
-                                                const optionalMarkers = ['Optional', 'Optional Extra', 'Dodatna možnost', 'Po želji'];
-                                                const chooseMarkers = ['Choose', 'Pick', 'Izberi', 'Izberite'];
-
-                                                const isOptional = optionalMarkers.some(marker => normalizedLower.startsWith(marker.toLowerCase()));
-                                                const hasUpgrade = feature.includes('→');
-                                                const isSubItem = feature.startsWith('  ');
-                                                const isChooseHeader = chooseMarkers.some(marker => normalizedLower.startsWith(marker.toLowerCase()));
-                                                
-                                                return (
-                                                    <motion.li 
+                                            <ul className="space-y-2 mb-8 flex-1">
+                                                {plan.features.map((feature, i) => (
+                                                    <motion.li
                                                         key={i}
                                                         initial={{ opacity: 0, x: -20 }}
                                                         whileInView={{ opacity: 1, x: 0 }}
                                                         viewport={{ once: true }}
                                                         transition={{ delay: 0.1 + i * 0.05 }}
-                                                        className={`
-                                                            ${!isSubItem ? 'flex items-start gap-2' : 'ml-6'}
-                                                            ${isOptional ? 'mt-2 p-2 bg-purple-500/5 rounded-md' : ''}
-                                                            ${hasUpgrade ? 'text-accent font-medium' : 'text-text-active'}
-                                                            ${isSubItem ? 'text-[11px] text-text-active/80' : 'text-xs'}
-                                                            ${isChooseHeader ? 'font-medium' : ''}
-                                                        `}
+                                                        className="flex items-start gap-2 text-sm text-text-active"
                                                     >
-                                                        {!isOptional && !isSubItem && !isChooseHeader && (
-                                                            <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                                            </svg>
-                                                        )}
+                                                        <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                                        </svg>
                                                         <span>{feature}</span>
                                                     </motion.li>
-                                                );
-                                            }).filter(Boolean)}
-                                        </ul>
+                                                ))}
+                                            </ul>
 
-                                        {/* CTA Button */}
-                                        <Button
-                                            to="/contact"
-                                            variant={isPremium ? 'primary' : isPopular ? 'secondary' : 'secondary'}
-                                            className="w-full"
-                                        >
-                                            {planButtons.cta}
-                                        </Button>
-                                    </motion.div>
-                                </motion.div>
+                                            <Button to="/contact" variant="navbar" className="w-full">
+                                                {planButtons.cta}
+                                            </Button>
+                                        </motion.div>
+                                    </div>
+                                </ScrollReveal>
                             );
                         })}
                     </div>
@@ -326,20 +281,19 @@ const PlansPage: React.FC = () => {
 
                     <ScrollReveal>
                         <div className="overflow-x-auto">
-                            <table className="w-full">
+                            <table className="w-full table-fixed">
                                 <thead>
                                     <tr className="border-b border-line">
-                                        <th className="text-left py-4 px-4 text-text-active font-medium">{comparison.feature}</th>
+                                        <th className="text-left py-4 px-6 text-text-active font-medium w-1/4">{comparison.feature}</th>
                                         {plans.map((plan, planIndex) => {
-                                            const translatedPlan = translatedPlans[planIndex] ?? { name: plan.name };
-                                            const hasDiscount = planIndex >= 1; // Core, Pro, and Scale have discount
-                                            const discountPercent = planIndex === 1 ? 0.50 : planIndex === 2 ? 0.60 : 0.70; // Core 50%, Pro 60%, Scale 70%
+                                            const hasDiscount = planIndex >= 1;
+                                            const discountPercent = planIndex === 1 ? 0.30 : 0.50;
                                             const originalPrice = parseInt(plan.price.replace(/[^0-9]/g, ''));
-                                            const discountedPrice = Math.round(originalPrice * (1 - discountPercent));
+                                            const discountedPrice = planIndex === 1 ? 700 : Math.round(originalPrice * (1 - discountPercent));
 
                                             return (
-                                                <th key={plan.name} className="text-center py-4 px-4">
-                                                    <div className="font-display text-lg font-medium">{translatedPlan.name}</div>
+                                                <th key={plan.name} className="text-center py-4 px-6 w-1/4">
+                                                    <div className="font-display text-lg font-medium">{plan.name}</div>
                                                     {hasDiscount ? (
                                                         <div className="text-red-600 font-bold">€{discountedPrice}</div>
                                                     ) : (
@@ -360,11 +314,10 @@ const PlansPage: React.FC = () => {
                                             transition={{ delay: index * 0.05 }}
                                             className="border-b border-accent/10 hover:bg-gradient-to-r hover:from-accent/5 hover:to-purple-500/5 transition-all duration-300"
                                         >
-                                            <td className="py-4 px-4 text-text-active font-medium">{row.name}</td>
-                                            <td className="text-center py-4 px-4">{row.starter}</td>
-                                            <td className="text-center py-4 px-4">{row.core}</td>
-                                            <td className="text-center py-4 px-4">{row.pro}</td>
-                                            <td className="text-center py-4 px-4">{row.scale}</td>
+                                            <td className="py-4 px-6 text-text-active font-medium">{row.name}</td>
+                                            <td className="text-center py-4 px-6">{row.starter}</td>
+                                            <td className="text-center py-4 px-6">{row.pro}</td>
+                                            <td className="text-center py-4 px-6">{row.scale}</td>
                                         </motion.tr>
                                     ))}
                                 </tbody>

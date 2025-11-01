@@ -70,7 +70,8 @@ const WorkPage: React.FC = () => {
             >
               <Link
                 to="/contact"
-                className="inline-block px-8 py-3 rounded-full border border-text-active/20 hover:border-text-active/40 transition-colors text-sm md:text-base"
+                className="inline-block px-8 py-3 rounded-full border-2 hover:border-text-active/40 transition-colors text-sm md:text-base"
+                style={{ borderColor: '#0E5F63' }}
               >
                 {t('work.getInTouch')}
               </Link>
@@ -83,7 +84,7 @@ const WorkPage: React.FC = () => {
       <section className="pb-24 md:pb-32 lg:pb-40">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
           {/* Section Header */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -91,9 +92,9 @@ const WorkPage: React.FC = () => {
             className="mb-16 md:mb-24"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="h-[1px] bg-line flex-1"></div>
-              <span className="text-sm text-text-active/60 uppercase tracking-widest">{t('work.packageExamples')}</span>
-              <div className="h-[1px] bg-line flex-1"></div>
+              <div className="h-[1px] flex-1" style={{ backgroundColor: '#0E5F63' }}></div>
+              <span className="text-lg md:text-xl text-text-active uppercase tracking-widest font-medium">{t('work.packageExamples')}</span>
+              <div className="h-[1px] flex-1" style={{ backgroundColor: '#0E5F63' }}></div>
             </div>
           </motion.div>
 
@@ -227,7 +228,7 @@ const WorkPage: React.FC = () => {
           </div>
 
           {/* Bottom CTA */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -237,7 +238,8 @@ const WorkPage: React.FC = () => {
             <p className="text-text-active/60 mb-8">{t('work.haveProject')}</p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-text-active text-bg rounded-full hover:bg-text-active/90 transition-colors group"
+              className="inline-flex items-center gap-3 px-8 py-4 text-bg rounded-full hover:opacity-90 transition-all group"
+              style={{ backgroundColor: '#0E5F63' }}
             >
               <span className="text-lg font-medium">{t('work.letsWork')}</span>
               <motion.span

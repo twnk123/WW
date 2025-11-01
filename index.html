@@ -97,10 +97,48 @@
         --text-active: #3f4144;
         --line: #d9dede;
       }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Offset for fixed header */
+      }
+
       html, body {
         background-color: var(--bg);
         color: var(--text-active);
         font-family: 'Inter', sans-serif;
+      }
+
+      /* Smooth scrolling with custom easing */
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+
+      /* Disable smooth scroll for users who prefer reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Custom scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--line);
+        border-radius: 6px;
+        border: 3px solid var(--bg);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-inactive);
       }
       .font-display {
         font-family: 'Space Grotesk', sans-serif;

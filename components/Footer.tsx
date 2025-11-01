@@ -12,7 +12,6 @@ const socialLinks = [
 const quickLinks = [
   { path: '/work', labelKey: 'nav.work' },
   { path: '/services', labelKey: 'nav.services' },
-  { path: '/diy', labelKey: 'nav.diy' },
   { path: '/plans', labelKey: 'nav.plans' },
   { path: '/about', labelKey: 'nav.about' },
   { path: '/contact', labelKey: 'nav.contact' },
@@ -23,8 +22,8 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* Marquee band - section above footer */}
-      <section className="w-full bg-bg text-text-active py-16 md:py-24 lg:py-32 overflow-hidden border-t border-line">
-        <div className="marquee-content whitespace-nowrap font-display text-[16rem] md:text-[24rem] lg:text-[32rem] font-bold tracking-widest uppercase leading-none notranslate" translate="no">
+      <section className="w-full bg-bg py-16 md:py-24 lg:py-32 overflow-hidden border-t border-line">
+        <div className="marquee-content whitespace-nowrap font-display text-[16rem] md:text-[24rem] lg:text-[32rem] font-bold tracking-widest uppercase leading-none notranslate keep-color-invert" translate="no" style={{ color: '#0E5F63' }}>
           WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER — WHITEWEAVER —
         </div>
       </section>
@@ -36,7 +35,7 @@ const Footer: React.FC = () => {
                <AnimatedText text={t('home.cta.buildTogether')} el="span" className="block"/>
             </h2>
             <Link to="/contact">
-              <button className="mt-8 bg-button-bg hover:bg-button-bg-hover text-text-active px-8 py-4 rounded-full transition-colors">
+              <button className="mt-8 bg-[#0E5F63] hover:bg-[#0c5256] text-white px-8 py-4 rounded-full transition-colors keep-color-invert">
                 {t('home.cta.startProject')}
               </button>
             </Link>

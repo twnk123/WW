@@ -10,6 +10,14 @@ html.invert-colors svg {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* Keep #0E5F63 color consistent in invert mode - re-invert to original */
+html.invert-colors .keep-color-invert {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+html.invert-colors .bg-\[\#0E5F63\] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
 /* Marquee animation */
 @keyframes marquee {
   0% {

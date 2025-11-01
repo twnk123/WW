@@ -7,7 +7,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 const navLinks = [
   { path: '/work', labelKey: 'nav.work' },
   { path: '/services', labelKey: 'nav.services' },
-  { path: '/diy', labelKey: 'nav.diy' },
   { path: '/plans', labelKey: 'nav.plans' },
   { path: '/about', labelKey: 'nav.about' },
   { path: '/contact', labelKey: 'nav.contact' },
@@ -74,17 +73,17 @@ const Header: React.FC = () => {
       <header className="hidden min-[1050px]:block fixed top-[53px] left-0 right-0 z-40 transition-colors duration-300">
         <div className={`max-w-7xl mx-auto px-6 md:px-10 transition-all duration-300 ${isScrolled ? 'pt-4' : 'pt-8'}`}>
           <div className="relative flex justify-center items-center h-16 bg-transparent">
-            <Link to="/" className="absolute left-0 font-display text-2xl font-bold tracking-widest uppercase z-10 notranslate" translate="no">
+            <Link to="/" className="absolute left-0 font-display text-3xl font-extrabold tracking-widest uppercase z-10 notranslate keep-color-invert" translate="no" style={{ color: '#0E5F63' }}>
               Whiteweaver
             </Link>
             <nav className="flex-shrink-0">
-              <div className="bg-text-active text-bg px-3 py-2 rounded-full flex items-center space-x-1">
+              <div className="px-3 py-2 rounded-full flex items-center space-x-1 keep-color-invert" style={{ backgroundColor: '#0E5F63' }}>
                 {navLinks.map(link => (
                   <NavLink
                     key={link.path}
                     to={link.path}
                     className={({ isActive }) =>
-                      `text-sm font-medium px-4 py-1 rounded-full transition-colors ${isActive ? 'bg-white/20' : 'hover:bg-white/10'}`
+                      `text-sm font-medium px-4 py-1 rounded-full transition-colors text-white ${isActive ? 'bg-white/20' : 'hover:bg-white/10'}`
                     }
                   >
                     {t(link.labelKey)}
@@ -105,7 +104,7 @@ const Header: React.FC = () => {
       <header className={`min-[1050px]:hidden fixed top-[89px] left-4 right-4 z-[60] transition-all duration-300`}>
         <div className={`p-2 rounded-2xl ${isOpen ? 'bg-bg' : 'bg-bg/80 backdrop-blur-sm'}`}>
             <div className="flex justify-between items-center h-12 px-4">
-                <Link to="/" className="font-display text-xl font-bold tracking-widest uppercase notranslate" translate="no">
+                <Link to="/" className="font-display text-2xl font-extrabold tracking-widest uppercase notranslate keep-color-invert" translate="no" style={{ color: '#0E5F63' }}>
                   Whiteweaver
                 </Link>
                 <div className="flex items-center space-x-2">
