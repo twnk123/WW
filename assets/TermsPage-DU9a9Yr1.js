@@ -1,0 +1,265 @@
+import{j as e,R as l}from"./index-C2qUek4h.js";import{S as c}from"./Seo-DveFC23V.js";const d=`Last Updated: October 28, 2025
+\r
+Introduction & Acceptance:\r
+Welcome to WhiteWeaver. These Terms and Conditions (“Terms”) govern your access to and use of the whiteweaver.com website (the “Site”) and your engagement of our web development services (the “Services”). By accessing the Site, contacting us, or purchasing any of our service packages, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our website or services. These Terms form a binding agreement between you (the “Client” or “you”) and the operator of WhiteWeaver (“WhiteWeaver,” “we,” or “us”). WhiteWeaver is currently an unregistered sole proprietorship based in Slovenia (operating under the owner’s personal name). While not a formally registered company, WhiteWeaver abides by all relevant laws and regulations.\r
+\r
+Please read these Terms carefully. We aim to write them in clear language for transparency. If you have any questions or require clarification, contact us at support@whiteweaver.com before proceeding.\r
+\r
+1. Services Offered\r
+\r
+WhiteWeaver provides professional web development and design services, primarily focused on creating complete websites for clients. Our service offerings are structured into pre-defined packages (as described below) to suit different needs, and we also tailor solutions based on individual agreements. When you engage us, we will work closely with you to define the project scope, deliverables, and timeline.\r
+\r
+Packages: We currently offer four main website development packages at set price points:\r
+\r
+Starter Package – €250: A basic web development package ideal for simple sites or landing pages. This package is budget-friendly and requires 100% upfront payment before project start.\r
+\r
+Core Package – €300 (Discounted Rate): A more comprehensive package than Starter, suitable for standard small business websites. The price reflects a current discount (the package may normally cost more). Payment is 100% upfront before commencing work.\r
+\r
+Pro Package – €380 (Discounted Rate): An advanced package meant for larger or more feature-rich websites. This rate is discounted from our regular pricing. Payment is split 50% upfront and 50% upon completion of the project.\r
+\r
+Scale Package – €555 (Discounted Rate): Our most extensive package, intended for clients who need a scalable, possibly multi-page or e-commerce enabled site. This price is currently discounted as a special offer. Payment is split 50% upfront and 50% upon completion of the project.\r
+\r
+Note: All prices are in Euros (€). Since WhiteWeaver is not yet a registered company, we currently do not charge VAT (Value Added Tax) on our prices. If our business registration status changes or VAT becomes applicable, we will update pricing information and inform clients in advance.\r
+\r
+The details of what each package includes (number of pages, specific features, etc.) are described on our Site or in communications with you. We will also clarify these details in our proposal or invoice before you make any payment. If your project requirements do not fit neatly into one of the above packages, we will provide a custom quote. In all cases, the exact scope of deliverables and specifications will be agreed upon in writing (e.g., via email or a signed proposal) before the project starts.\r
+\r
+2. Ordering, Payment Terms, and Deposit\r
+\r
+Ordering Services: To order a service or package, you can contact us through the Site’s contact form or via email/social media. Once we discuss your needs, WhiteWeaver will provide a written quote or proposal outlining the work to be done, the price, payment schedule, and delivery timeline. Your acceptance of the proposal (or payment of the invoice/deposit) will constitute agreement to proceed under these Terms. We reserve the right to decline a project if it doesn’t align with our expertise or business policies (for example, projects in regulated industries – see Section 9 below).\r
+\r
+Payment Schedule: Payment terms vary by package:\r
+\r
+For Starter and Core packages: 100% of the fee is due upfront. We will invoice you for the full amount, and work will commence once the payment is received.\r
+\r
+For Pro and Scale packages: 50% deposit upfront, and 50% balance upon completion. We will invoice you for the 50% deposit to begin. The remaining 50% will be invoiced when the project is near completion, and it must be paid before final delivery or launch of the website. We will keep you updated on progress and provide a preview or staging site for review before final payment is requested.\r
+\r
+Payments can be made via the methods indicated on our invoice (e.g., bank transfer, PayPal, or other electronic payment options – details will be provided). All payments are to be made in EUR, and the client is responsible for any bank or transfer fees. Timely payment is essential to keep the project on schedule. If an invoice is not paid on time, we reserve the right to pause work until payment is received. If there are any issues or delays in payment, please communicate with us so we can find a solution.\r
+\r
+Late Payment: If the final payment (for Pro/Scale) is delayed beyond the agreed schedule, WhiteWeaver may withhold transfer of the website or site launch until payment is completed. In the event of significant delay (e.g., more than 14 days past due) and lack of communication, we reserve the right to charge reasonable late fees or interest as permitted by law, and ultimately consider the contract breached (which could result in work cessation or other remedies). We prefer to work with understanding, so we will provide reminders and attempt to work out any payment difficulties with you first.\r
+\r
+3. Deliverables and Timeline\r
+\r
+Project Timeline: When starting the project, WhiteWeaver will discuss and agree on a timeline or deadline for delivery of the completed website. This timeline will depend on the project scope and our current scheduling. We commit to a professional effort to meet agreed deadlines. The timeline will be clearly stated in the proposal or communication (for instance, “Delivery by [Date]” or “X weeks from project start”).\r
+\r
+Client Responsibilities for Timeline: Timely delivery also depends on your cooperation. You may need to provide materials (such as text content, images, logos, or other information) or feedback/approvals during the development process. Your prompt response to our requests is crucial. WhiteWeaver is not responsible for delays caused by the client’s failure to provide required information or approvals in a timely manner. If such delays occur, the delivery deadline may be adjusted accordingly (we will communicate any needed changes). Delays outside either party’s control (force majeure events, see Section 10) may also extend the timeline with mutual agreement.\r
+\r
+Delivery Method: The final website delivery method will be determined in consultation with you, as it can vary based on your needs and technical setup. Options for delivery include, for example:\r
+\r
+Deploying the completed website to your provided web hosting or server.\r
+\r
+Providing you with a packaged set of website files (and a database export if applicable) for you to upload to your server.\r
+\r
+Publishing the site on a temporary server or staging site for you to review, then transferring it to your domain upon approval.\r
+\r
+We will decide the best method together. If you are not sure how to host or deploy the site, WhiteWeaver can guide you or even handle the deployment as part of the service (this might be included or at an additional agreed fee, depending on the package). The website is considered “delivered” when the agreed deployment is completed or the files/package have been handed over to you, and the site is functional as per the agreed specifications.\r
+\r
+Acceptance Testing: Upon delivery, you should promptly review the website. We encourage you to test all pages and features to ensure they meet the agreed requirements. WhiteWeaver will fix any bugs or errors that are against the agreed specifications found during an acceptance period (e.g., within 7 days of delivery) at no additional cost. Minor adjustments or tweaks are expected and will be handled. However, significant new requests or changes that are outside the originally agreed scope may require a change order and could incur extra charges (we will discuss with you if that situation arises).\r
+\r
+Once you confirm that the site meets the specifications (or if we don’t hear any feedback within the acceptance period), we will consider the project completed. At that point, if any final balance payment is outstanding, it becomes immediately due.\r
+\r
+4. Ownership and Intellectual Property\r
+\r
+Transfer of Ownership: WhiteWeaver acknowledges that once the website project is fully paid for and delivered, full ownership of the website is transferred to you, the client. This includes all the visual design, code, graphics, and content that we have created or obtained on your behalf as part of the project, unless otherwise specified. We want you to have complete control and rights over your website.\r
+\r
+Pre-Existing Materials: If the project includes any third-party components (such as open-source libraries, plugins, stock images, etc.) or any materials you (the client) provided (such as your logo or written content), those elements might be subject to their own licenses or terms. We will inform you of any such components in your project. Typically, open-source components remain under their open-source licenses (allowing your use, but often requiring an attribution or license text retention, for example). You will have whatever rights to those components that their original license grants. For materials you provided, you retain ownership of those; we assume you have the rights to use any content you give us (see Client Responsibilities in Section 5).\r
+\r
+Developer Portfolio Rights: We retain the right to showcase the completed website, in whole or in part, in our portfolio and marketing materials as an example of our work, unless you explicitly request in writing that your project remain private. This portfolio use will typically involve screenshots and a description of the project, and possibly a link to the live site. We will not disclose any sensitive information you shared during the project – just the end result publicly available site and basic project info. If your contract or industry requires NDA or confidentiality (and we agree to such in the project terms), we will of course honor that and not use the project in our portfolio without permission.\r
+\r
+WhiteWeaver Branding: We may include a discreet credit (such as “Website by WhiteWeaver” in the footer of the site we build for you). This is a common practice and is helpful for our marketing. If you prefer not to have such a credit, please let us know – we will remove it or modify it as per your preference. Once you own the site, you are also free to remove or change that credit yourself.\r
+\r
+Use of Work in Progress: Until the project is completed and paid in full, the designs, prototypes, or interim code we create remain the property of WhiteWeaver. We ask that you do not use or launch any interim work that we have shared (for feedback, etc.) on a live environment until final payment is made or unless we have agreed otherwise. Upon full payment, ownership transfers as stated. If the project is terminated early (see Section 8), rights to partial work will be addressed per the cancellation terms.\r
+\r
+5. Client Responsibilities and Commitments\r
+\r
+To ensure a successful project, the client has a few important responsibilities:\r
+\r
+Providing Content and Assets: You are responsible for providing all necessary content for the website, unless otherwise agreed that WhiteWeaver will create it. “Content” includes text, images, logos, videos, and any other materials that should appear on the site. You should provide this content in a timely manner and in the formats we request (e.g. text in a Word/Google doc, images in high-resolution JPEG/PNG, etc.). Delays in providing content may affect the timeline. If you need help with content creation or sourcing (for example, copywriting or stock photos), we can assist or refer you, but that may incur additional fees unless specified in the package.\r
+\r
+Rights to Materials: By providing content or assets to WhiteWeaver, you confirm that you own the rights to that content or have permission/license to use it. For example, if you send us a photograph to include on the site, you should either own that photo or have obtained it legally (such as from a stock library with a license). WhiteWeaver is not liable for any copyright or intellectual property violations in materials you supply. You agree to indemnify and hold WhiteWeaver harmless from any third-party claims or damages arising from use of content that you provided and did not have rights to use. (In plain terms: please don’t ask us to put anything on your website that you stole or don’t have permission for – it could cause legal trouble for both of us.)\r
+\r
+Feedback and Communication: You should designate a primary point of contact (this might be yourself or someone on your team) to communicate with us throughout the project. Timely feedback is important. If we send designs or demos for review, we expect feedback/approval within a reasonable time frame (we’ll typically specify, e.g. “please review within 3 days”). Consolidated feedback is appreciated if multiple stakeholders are involved on your side.\r
+\r
+Technical Access: Depending on the delivery method, you may need to provide us access to certain technical resources, such as your domain registrar or hosting account, if we are to deploy the site there. You should ensure we are given the necessary credentials or create temporary access for us. We will handle such information confidentially (see Section 7 on Confidentiality). If you cannot provide access, the alternative is we deliver files and instructions, and you handle deployment. We will coordinate this with you.\r
+\r
+Testing and Review: As mentioned in Section 3, you should thoroughly review the delivered website. While we strive to catch all issues, web development can be complex and your use-case testing helps ensure everything works for your needs. Promptly report any problems or required fixes that are within scope.\r
+\r
+Use of the Delivered Site: After handover, how you use the website is generally up to you. However, you agree not to use the delivered website or Services for any unlawful purpose or in violation of any applicable law or regulation. If your website will collect personal data from its users, you are responsible for having your own privacy policy and compliance in place – WhiteWeaver’s role is just the developer; we do not take responsibility for the operation of your site post-handover (aside from any ongoing maintenance agreement if we have one). Similarly, any content you add or modify on the site after delivery is your responsibility to keep lawful and compliant with relevant regulations.\r
+\r
+By meeting these responsibilities, you help us deliver a quality product on time. We value open and honest communication – if you’re ever unsure about what you need to do, just ask and we’ll clarify.\r
+\r
+6. Revisions and Change Requests\r
+\r
+We understand that during a project, new ideas or changes may come up. Our approach to revisions is as follows:\r
+\r
+Included Revisions: Each package typically includes a certain number of revision rounds or minor adjustments at specific stages (for example, design tweaks after a first draft, or a few changes after the initial site build). We will clarify in the project scope how many revision rounds are included. During these rounds, you can request changes to the design or functionality that remain in line with the agreed scope. We’ll do our best to accommodate reasonable change requests as part of the package.\r
+\r
+Out-of-Scope Changes: If you request additional features or significant changes that were not agreed upon in the original scope (for instance, adding a new e-commerce module to a site that was initially just informational, or substantially changing the design after it’s been mostly built), we will treat these as out-of-scope. In such cases, we will inform you promptly and discuss potential impacts on timeline and cost. We can then mutually agree on a scope adjustment: this may involve an additional fee and possibly a new delivery deadline depending on the magnitude of the change. We will not proceed with any out-of-scope work without your approval of the estimate for that work.\r
+\r
+Client Change of Mind: If you simply change your mind about something (for example, deciding on a different design style after one was already implemented per earlier agreement), we’ll still try to accommodate you, but note that it might be considered a new request outside the original project. We’ll communicate if that’s the case. Again, minor tweaks are generally fine and expected; major shifts might need a formal change order.\r
+\r
+Developer Suggestions: Sometimes we might suggest a change or an addition that could benefit your website. If it’s something minor, we may include it at no cost. If it’s a bigger enhancement (not originally asked for), we’ll discuss whether you want it and if any cost is involved. You are free to decline suggestions that add cost. Our goal is to deliver the best site for you, within your budget and needs.\r
+\r
+All changes and revisions should be documented (even if just in email) so both parties have a clear understanding of what’s agreed.\r
+\r
+7. Confidentiality\r
+\r
+During our work together, both you and WhiteWeaver may share confidential information with each other. Confidential information includes any non-public business or technical information, such as strategies, ideas, trade secrets, or any materials marked or reasonably expected to be confidential. For example, you might share pre-release information about your business plans, or we might share some proprietary development approach.\r
+\r
+Both parties agree to keep each other’s confidential information strictly confidential. We will not disclose or use your confidential information for any purpose outside the scope of the project, and you agree to do the same with ours. The only exceptions are if we have written permission, or if we are legally compelled (and if so, we will inform the other party if permitted).\r
+\r
+WhiteWeaver may ask for a testimonial or permission to mention the completed project publicly (as per Section 4 on portfolio use), but any sensitive details you shared during development will remain confidential beyond that. If you have a specific Non-Disclosure Agreement (NDA) you need us to sign, we are open to that discussion as well.\r
+\r
+This confidentiality obligation continues even after the project is completed or these Terms are terminated. (In plain language: we don’t share your secrets, and you don’t share ours.)\r
+\r
+8. Cancellation and Refund Policy\r
+\r
+We strive to ensure every project is completed to the client’s satisfaction. However, we understand circumstances can change. This section outlines what happens if a project is canceled or if you are seeking a refund.\r
+\r
+Client-Initiated Cancellation: If you decide to cancel the project before it is completed, please notify us in writing (email is fine) as soon as possible. The following terms apply for cancellation:\r
+\r
+If cancellation is requested before work has started and after payment of an upfront fee, we will refund the amount paid minus any transaction fees or preparatory work costs we have incurred. (For instance, if you paid and then changed your mind the next day before we began, we’ll generally refund in full, but if a payment processor fee isn’t refundable to us, that may be deducted.)\r
+\r
+If cancellation is requested after work has begun but before completion, any upfront deposit (50% for Pro/Scale packages, or the full amount for Starter/Core if work started immediately after payment) is generally non-refundable. That deposit covers the time and resources we’ve allocated to your project. We will evaluate on a case-by-case basis if a partial refund is appropriate depending on how much work was done and the reason for cancellation. Any work completed up to cancellation will be made available to you in its current form, without further obligation from us to finalize it. You will not be obligated to pay any remaining balance for work not delivered, but the upfront portion is retained to cover work already performed.\r
+\r
+If the project is near completion and you cancel, we may be entitled to the full project fee if the majority of work was done as per the agreement. We will try to be fair – for example, if 90% of the project is finished, we might negotiate a partial additional payment (beyond deposit) to cover the nearly completed work. The goal is to fairly compensate for work done while considering the value to you of what’s delivered.\r
+\r
+WhiteWeaver-Initiated Cancellation: If we find it necessary to cancel the project on our end (due to unforeseen circumstances such as illness, or if the project becomes unworkable due to client inaction or breach of these Terms), we will notify you in writing. In such cases:\r
+\r
+If we are at fault or unable to complete the project for our own reasons, we will refund any payments for work not delivered. For example, if you paid a deposit and we cannot finish the project, we will refund amounts for incomplete portions or even the full deposit if hardly any work was done. You will be provided with any work-in-progress that was completed, and we will do our best to help you transition to another developer if needed.\r
+\r
+If the cancellation is due to a breach by the client (e.g., non-payment, failure to communicate for an extended period, providing materials that violate laws or these Terms), we reserve the right to retain any payments made to cover work done and losses, and we will provide an accounting of work completed up to that point. We will give notice and a chance to remedy any issue before cancellation.\r
+\r
+Refunds for Delayed Delivery: WhiteWeaver offers a timeliness guarantee for our clients’ peace of mind. If we fail to deliver the completed website by the agreed deadline, and this delay is solely caused by us (not due to client delays or scope changes, and not due to force majeure events), then you are entitled to a refund of any payments made for that project. We will also deliver the work done so far, if any, but you will not be obligated to continue the project with us. This refund policy for late delivery is our commitment to meeting our promises. However, we also reserve the option, if you agree, to renegotiate a new deadline (perhaps with a small discount or added value for the inconvenience) as an alternative to cancellation/refund – the choice will be yours.\r
+\r
+No Other Refunds: Apart from the delay scenario above, refunds are generally not provided once work has been delivered. Web development is a custom service; you are paying for our time and expertise. If there are issues with the delivered product, we will work with you to fix bugs or discrepancies from the agreed scope (see Section 3 on Acceptance). But dissatisfaction alone (for example, deciding you don’t like a design that you previously approved) will not typically warrant a refund once the work is completed as specified. We encourage open communication during the project to avoid such outcomes.\r
+\r
+Any refund, when approved, will be processed through the original payment method whenever possible, and within a reasonable timeframe (we aim for 14 days or less from agreement on the refund).\r
+\r
+9. Limitations: Regulated Industries and Appropriate Use\r
+\r
+WhiteWeaver currently does not handle projects for certain regulated industries such as finance (e.g., banking, investment advising platforms), healthcare/medical services (that involve processing health data or require HIPAA compliance, etc.), gambling, or any other industry that requires specialized regulatory compliance beyond standard data privacy and e-commerce laws. This is a business decision to ensure we operate within our expertise and compliance comfort zone.\r
+\r
+By engaging our services, you confirm that your project is not in one of these highly regulated fields, or if it is, you have explicitly informed us and we have mutually agreed to proceed. We reserve the right to decline or cancel (with appropriate refund if applicable) a project that is discovered to fall under a prohibited category if it was not disclosed upfront.\r
+\r
+Furthermore, our Services should not be used for any unlawful or prohibited activities. Appropriate Use includes:\r
+\r
+You will not request WhiteWeaver to build anything that is illegal, fraudulent, or promotes harm. (For instance, we will not create websites for illegal drug sales, hate speech platforms, etc.)\r
+\r
+If your website will involve collecting personal data from your users (like a newsletter signup, customer accounts, etc.), you should inform us so we can design appropriately, but note that you are responsible for complying with any laws applicable to that data (like GDPR, if you target EU users). We can implement features for compliance (cookie banners, consent forms, etc. as part of the project if agreed), but we do not assume legal responsibility for your operation. We advise consulting a legal expert to ensure your website’s compliance if you operate in such areas.\r
+\r
+WhiteWeaver’s limitation in serving regulated industries is for our protection and clarity – it’s not a judgment on those fields. We may revisit this policy in the future as our business grows or we obtain specific compliance capabilities. In the meantime, thank you for understanding these boundaries.\r
+\r
+10. Warranty Disclaimer and Limitation of Liability\r
+\r
+No Automatic Warranties: We commit to delivering a website that meets the agreed specifications and performing services with reasonable care and skill. However, aside from what is expressly promised in these Terms and in our agreement with you, the Services are provided “as is” and to the fullest extent permitted by law, we disclaim any other warranties. This includes, for example, any implied warranties of merchantability or fitness for a particular purpose. We do not guarantee that the website we develop will achieve specific results for your business (such as improved sales or search rankings), or that it will be error-free or uninterrupted in operation once under your control (especially if you or third parties modify it, or if server/hosting issues arise). We do, of course, guarantee that the deliverables will materially conform to the agreed scope and any documented requirements at the time of delivery, and that any known issues will be disclosed and/or fixed as part of our agreement. But we do not make broader promises beyond the scope of the project.\r
+\r
+Limitation of Liability: In no event will WhiteWeaver (or the individual owner/operator of WhiteWeaver) be liable to you or any third party for any indirect, incidental, special, consequential, or punitive damages arising out of or related to our services or these Terms. This includes, without limitation, damages for lost profits or revenue, lost savings, lost or corrupted data, business interruption, or any other intangible losses, even if we have been advised of the possibility of such damages.\r
+\r
+To the extent permitted by applicable law, WhiteWeaver’s total cumulative liability for any claims arising out of or relating to this agreement or the services shall not exceed the total amount of fees actually paid by you to WhiteWeaver for the project in question. For example, if your project fee was €300, our liability is capped at €300. This limitation applies whether the claim is based on breach of contract, tort (negligence, etc.), strict liability, or any other legal theory.\r
+\r
+Exceptions: Nothing in these Terms shall limit or exclude liability for gross negligence, willful misconduct, or any other liability which cannot be limited or excluded by law. Additionally, your statutory rights (especially if you are considered a consumer under law) are not affected. Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities, so the above limitations may not apply to you fully. However, these Terms will be interpreted to mean that our liability is limited to the lowest amount permissible under relevant law.\r
+\r
+Mitigation: You agree to take reasonable measures to mitigate any loss or damage you may suffer arising from any breach of this agreement or service outcome. For example, if you notice an issue with the delivered site, you should promptly notify us and allow us the opportunity to fix it, rather than, say, leaving it unaddressed and allowing damage to compound.\r
+\r
+11. Indemnification\r
+\r
+You agree to indemnify, defend, and hold harmless WhiteWeaver and its owner from and against any and all claims, liabilities, losses, and expenses (including reasonable attorneys’ fees and costs) that arise out of or relate to: (a) your use of the delivered website or Services in violation of these Terms or applicable law; (b) any content or materials you provided to us for use in the project (for example, if you supplied infringing content, as noted in Section 5, and a third party takes legal action, you will cover us); (c) any breach by you of these Terms or the representations/warranties you’ve made herein.\r
+\r
+This indemnification obligation means that if a third party sues or demands compensation from WhiteWeaver due to something you did or provided in relation to our work, you will step in to protect WhiteWeaver (cover the costs and any damages). We will promptly notify you of any such claim and allow you to control the defense, but we reserve the right to participate with counsel of our choosing at our own expense. This provision survives termination of the contract.\r
+\r
+In simpler terms: We’ll keep things professional on our side and not violate others’ rights; we ask you to do the same. If your actions or content drag us into legal trouble, you’ll help shield us from harm.\r
+\r
+12. Force Majeure\r
+\r
+Neither WhiteWeaver nor the client will be liable for failure to perform any obligation under these Terms if the failure is caused by events beyond their reasonable control. This includes, but is not limited to, acts of God, natural disasters (e.g., earthquakes, floods), fires, epidemics or pandemics, acts of government or regulatory authorities, war, terrorism, civil disturbances, strikes or labor disputes, internet or power outages, or other events commonly defined as “force majeure.”\r
+\r
+If such an event occurs that affects either party’s ability to fulfill their obligations (for example, if a natural disaster disrupts our ability to work or communicate), the affected party should promptly notify the other with details. Both parties will then discuss a fair way forward, such as extending deadlines or temporarily suspending work until conditions improve. If the force majeure event continues for an extended period (e.g., more than 30 days) making the project impracticable, either party may have the option to terminate the project, with an equitable settlement regarding any work done or payments made.\r
+\r
+The key point: Some things are outside of everyone’s control, so neither side will unfairly hold the other responsible for such extreme situations.\r
+\r
+13. Changes to Terms\r
+\r
+WhiteWeaver may update or modify these Terms from time to time, especially to reflect changes in laws, our business practices, or service offerings. However, the Terms that were in effect at the time you entered a service agreement or purchase with us will generally govern that specific transaction. We will not retroactively change terms for an ongoing project without your consent.\r
+\r
+For users browsing our Site without engaging our services: if we update the Terms governing general site use, the new version will be indicated by an updated “Last Updated” date and will be effective when posted. We may additionally notify of significant changes via a notice on our website.\r
+\r
+For clients with ongoing projects: if a change occurs that could affect your project, we will inform you directly. In most cases, changes will be minor or clarifying. If we ever needed to change something material mid-project (which is unlikely), we would obtain your agreement or allow you to exit the contract if you do not agree, without penalty.\r
+\r
+Continuing to use the Site or Services after an updated Terms posting signifies acceptance of the revised terms for new interactions. Again, any specific project already underway will honor the Terms in place at the project start unless mutually agreed otherwise.\r
+\r
+14. Governing Law and Dispute Resolution\r
+\r
+These Terms and any dispute arising out of or related to them or the Services provided shall be governed by and construed in accordance with the laws of the Republic of Slovenia, without regard to its conflict of law principles. This governing law is chosen because WhiteWeaver is based in Slovenia, and it provides predictability in how the agreement is interpreted.\r
+\r
+Jurisdiction: In the event of any dispute or claim between us that we cannot resolve amicably, we agree to submit to the jurisdiction of the competent courts in Slovenia. Specifically, unless another venue is agreed upon, the courts located in the Republic of Slovenia shall have exclusive jurisdiction over any legal proceedings arising out of this agreement or the provision of Services.\r
+\r
+If you are a consumer (an individual acting outside of business) residing in the European Union, you may also have the right to pursue claims in your home country under certain consumer protection laws. These Terms do not limit any consumer protection rights that you are entitled to under the mandatory laws of your jurisdiction.\r
+\r
+Dispute Resolution Efforts: We genuinely hope to never see a dispute go to court. If any controversy or claim arises, both parties agree to first attempt to resolve it through friendly negotiation in good faith. You can contact us at support@whiteweaver.com with any grievances, and we will do our best to address the issue. If negotiation doesn’t resolve the matter, we might suggest mediation or another form of alternative dispute resolution before resorting to litigation, if both parties are amenable.\r
+\r
+EU Online Dispute Resolution: For clients in the EU, you should be aware of the European Commission’s Online Dispute Resolution platform, which can be found at https://ec.europa.eu/consumers/odr. This is a platform that helps EU consumers and traders resolve disputes out of court. While we are not obligated to use it, and we prefer direct communication, EU law requires that we mention its availability. We do not currently participate in any formal alternative dispute resolution process aside from what’s mentioned here.\r
+\r
+15. Miscellaneous Provisions\r
+\r
+Entire Agreement: These Terms, together with any specific agreement, proposal, or statement of work we have with you, constitute the entire agreement between you and WhiteWeaver regarding the Services. They supersede all prior discussions, negotiations, or agreements (whether written or oral) relating to the subject matter. In case of a direct conflict between these Terms and a separately signed contract or proposal for your project, the specific terms of the signed contract/proposal will prevail for that project.\r
+\r
+Severability: If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision will be deemed modified to the minimum extent necessary to make it enforceable (or disregarded if no such modification is possible), and the remaining provisions of these Terms will remain in full effect. In other words, the invalid part doesn’t invalidate the rest of the agreement.\r
+\r
+No Waiver: If either party fails to enforce any right or provision of these Terms, that does not constitute a waiver of future enforcement of that right or provision. For example, if we don’t immediately act on a late payment, it doesn’t mean we waive our right to act on future or continued lateness. All waivers must be explicitly provided in writing to be effective.\r
+\r
+Assignment: You may not assign or transfer the contract between us to someone else without our prior written consent. WhiteWeaver may assign or transfer this agreement (for example, to a formally registered company or to a successor in interest) with notice to you, provided that your rights are not adversely affected. These Terms bind and benefit any permitted successors or assigns.\r
+\r
+Relationship of Parties: The relationship between you and WhiteWeaver is that of an independent contractor. We are not entering a partnership, joint venture, or employment relationship. Neither party is an agent of the other, and neither has the power to bind the other to any third party.\r
+\r
+Third-Party Beneficiaries: These Terms do not confer any rights on any third party (except any person to whom rights are permittedly assigned as above).\r
+\r
+Notices: Communications regarding these Terms should be sent to support@whiteweaver.com. Official notices, if required to be in writing, can be sent via email, and will be considered delivered 1 business day after sending (provided no bounce-back is received), or by postal mail/courier to an address provided, considered delivered 5 business days after sending (or upon confirmed delivery). We will use the contact information you have provided for any official communications to you. Keep your contact info updated with us.\r
+\r
+Thank you for reading these Terms thoroughly. We know it’s a lot of information, but we believe in transparency and setting clear expectations. By working with WhiteWeaver, you are agreeing to these terms, and our goal is to meet or exceed your expectations in delivering a great website for you. If you have any questions about these Terms or any aspect of our services, please reach out. We look forward to collaborating on your web project!\r
+\r
+Additional Disclaimers and Notices\r
+\r
+In addition to the Privacy Policy and Terms and Conditions above, we include the following general notices and disclaimers to ensure full compliance and transparency:\r
+\r
+Legal Status and Business Information\r
+\r
+WhiteWeaver is presently operated by an individual as a sole proprietor and is not registered as a separate legal entity (company) in Slovenia. This means any contracts or transactions are made with the owner personally under the trade name “WhiteWeaver.” We are fully accountable under law as a business, even if not incorporated. When and if the business becomes formally registered (e.g., as an LLC or corporation) or obtains any official trade registrations, we will update our documentation to reflect the company name, registration number, and other required details. We provide this information in transparency so clients understand who they are doing business with. If you require the owner’s full name or address for contracting purposes, it will be provided in your invoices or upon request (since we haven’t published personal address details on the public site for privacy and safety reasons).\r
+\r
+As a Slovenia-based service provider, we comply with all Slovenian and EU laws applicable to sole proprietors. We do not currently have a VAT ID, as we are below the threshold or not required to register for VAT at this stage. Should our VAT status change, we will inform clients and include VAT on invoices as required.\r
+\r
+No Professional Advice Provided\r
+\r
+The content on whiteweaver.com, including any blog posts, case studies, or portfolio descriptions (if present), is for general informational and promotional purposes about our web development services. While we may discuss general strategies or examples, nothing on our Site should be taken as professional advice in areas such as legal, financial, or marketing strategy for your specific situation. We are web developers, not lawyers or financial advisors. If we provide any commentary on web-related legal compliance (e.g., GDPR needs for your site) or business growth ideas, that is incidental to our main services and should be verified with appropriate professionals. WhiteWeaver disclaims liability for any actions you take based on information on our Site outside the scope of a contracted project. Always consult relevant professionals for advice tailored to your needs in legal, financial, or other specialized matters.\r
+\r
+Third-Party Tools and Future Integrations\r
+\r
+As noted in our Privacy Policy, we currently do not use third-party analytics or marketing cookies. However, we plan to integrate Google Analytics and Facebook Pixel later. When these tools become active, we will clearly notify users via an updated cookie banner and Privacy Policy. We will also add a dedicated Cookie Policy page if necessary, detailing all cookies in use. This notice is to reiterate our commitment: we will not collect or track personal data through such tools without proper consent. Users will always have a choice in the matter.\r
+\r
+Additionally, if in future we integrate any other third-party services on our site (for example, a live chat widget, a scheduling calendar, or embedded social media feeds), we will update our policies to explain what data might be collected through those and how it is used. We want you to be fully informed about any data flows involving your personal information.\r
+\r
+External Links and Affiliations\r
+\r
+WhiteWeaver’s Site may include links to external websites or resources for your convenience (for instance, to articles, design resources, or our social media pages). We are not affiliated with or endorsed by third-party brands that may be mentioned on our site, unless explicitly stated. For example, if we mention “Google Analytics” or “Facebook,” it is only to describe the tool and not to imply any official partnership. All trademarks of third parties (like Facebook, TikTok, Instagram) belong to their respective owners. WhiteWeaver’s use of these names is for reference only (such as saying “we gather leads from Instagram” or “we will use Google Analytics”) and does not indicate any sponsorship or endorsement by those companies.\r
+\r
+We disclaim responsibility for the content, accuracy, or practices of any third-party websites that are linked from our Site. Visiting those sites is at your own discretion, and you should review their terms and policies.\r
+\r
+Compliance with Laws (GDPR and Others)\r
+\r
+We want to emphasize our dedication to compliance: being an EU-based service, GDPR is a core consideration in how we operate. Our Privacy Policy is designed to be GDPR-compliant, and we handle any personal data accordingly. We also adhere to the Slovenian electronic commerce rules and consumer protection laws for distance selling when applicable. For example, under certain EU consumer protection regulations, a consumer might have a 14-day “cooling-off” period to cancel certain service contracts concluded online. However, note: if we begin a service with your consent within that 14-day window (e.g., an immediate start on a project), EU law allows that the right to cancel can be waived for the portion of service completed. We mention this to be transparent: since our services are made-to-order, once we start work, cancellations might involve costs as explained in our Terms. We will however always try to be fair and accommodating within the framework of the law.\r
+\r
+If you are purchasing our services as a consumer (not for business purposes) within the EU, you may have certain additional rights. We strive to respect all such rights. Nothing in our policies is intended to override rights provided by law. If you have any concern about your statutory rights, please let us know and we will clarify how our service complies.\r
+\r
+Updates to Policies and Notices\r
+\r
+This section serves as a friendly reminder that the legal landscape and our business circumstances can change. We have crafted these documents to the best of our knowledge and with considerable detail, but they may be updated over time. Whenever we update our Privacy Policy, Terms and Conditions, or these Disclaimers/Notices, we will change the “Last Updated” date and post the revised content on our Site. For significant changes, we may also provide additional notice (like an email to clients or a pop-up notice on the site). By continuing to use our Site or services after updates, you acknowledge and accept the updated terms. Of course, if any change were to retroactively reduce your rights or increase your obligations for an ongoing service, we would seek your consent for that change.\r
+\r
+We encourage users and clients to periodically review all our legal pages to stay informed. Transparency and trust are pillars of WhiteWeaver’s business, so we aim to communicate any changes clearly.\r
+\r
+Contact and Questions\r
+\r
+Finally, if you have any questions or concerns regarding any of our legal documents – be it the Privacy Policy, Terms and Conditions, or these additional notices – please do not hesitate to reach out. The primary contact for all matters is support@whiteweaver.com. We are here to clarify and help. Your understanding of these terms is important to us, because a good business relationship is built on clear expectations and mutual respect.\r
+\r
+Thank you for taking the time to read these policies and notices. We look forward to working with you and building something great together, with full transparency and compliance every step of the way.
+`,u=o=>o.replace(/\r\n/g,`
+`).replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"').replace(/\u2014/g,"--").replace(/\u2013/g,"-").trim(),m=()=>{const n=u(d).split(/\n{2,}/).map(t=>t.trim()).filter(Boolean);return e.jsxs("div",{className:"min-h-screen py-24 md:py-32",children:[e.jsx(c,{title:"Terms of Service | WHITEWEAVER Studio",description:"Review the full WHITEWEAVER Studio terms and conditions covering services, payments, project scope, responsibilities, and legal notices.",canonical:"/terms",alternates:[{hrefLang:"en",href:"/terms"},{hrefLang:"x-default",href:"/terms"}]}),e.jsxs("div",{className:"max-w-3xl mx-auto px-6 md:px-10",children:[e.jsx("h1",{className:"font-display text-4xl md:text-5xl mb-6",children:"Terms and Conditions"}),e.jsx("article",{className:"space-y-6 text-base leading-relaxed text-text-active/80 whitespace-pre-wrap",children:n.map((t,a)=>{const i=t.split(`
+`);return e.jsx("p",{className:"whitespace-pre-wrap",children:i.map((s,r)=>e.jsxs(l.Fragment,{children:[s,r<i.length-1&&e.jsx("br",{})]},r))},a)})})]})]})};export{m as default};
