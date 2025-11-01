@@ -33,6 +33,12 @@ dist-ssr
 
 # Local documentation and notes
 google.txt
+BRANDING_UPDATE.md
+DEPLOYMENT_STATUS.md
+SCROLL_DEMO.tsx
+SCROLL_FEATURES.md
+SCROLL_QUICK_REFERENCE.md
+SCROLL_SUMMARY.md
 
 # Temporary files
 *.tmp
