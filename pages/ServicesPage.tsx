@@ -539,9 +539,9 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  const servicesSeoTitle = 'Web Dev Services, Ecommerce & AI | WHITEWEAVER';
+  const servicesSeoTitle = 'AI Web Development Services | MVP, E-commerce & Custom Apps | WHITEWEAVER';
   const servicesDescBase = t('services.subtitle') as string;
-  const servicesDesc = `AI-powered web development combining expert engineering with automation. React, Node.js, e-commerce, and AI integration. From spec to deployment in days.`;
+  const servicesDesc = `Professional AI-powered web development services: MVP development, e-commerce stores, custom web apps. React, Node.js, AI integration. Expert-driven, automated delivery in days, not months.`;
 
   return (
     <div className="min-h-screen overflow-hidden bg-bg">

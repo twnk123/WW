@@ -103,8 +103,8 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen overflow-hidden bg-bg">
       <Seo
-        title="About WHITEWEAVER | Expert Web Development Team"
-        description="Meet the team delivering MVPs in under 5 days. AI-powered development with expert oversight. Money-back guarantee. Serving startups worldwide."
+        title="About WHITEWEAVER | AI-Powered Web Development Team"
+        description="Meet the AI-powered team building production-ready MVPs in 5 days. 10 specialized AI agents + expert oversight. 50+ startups launched. Money-back guarantee. Global service."
         canonical="/about"
         alternates={[
           { hrefLang: 'en', href: '/about' },

@@ -61,10 +61,10 @@ const HomePage: React.FC = () => {
 
   const featuredProjects = translatedProjects.slice(0, 2);
 
-  const seoTitle = 'MVP in 3 Days | AI Web Development | WHITEWEAVER';
+  const seoTitle = 'AI Web Development Agency | Build Your MVP in 5 Days | WHITEWEAVER';
 
   const baseDesc = t('home.services.subtitle') as string;
-  const description = `Launch your MVP in 3 days. AI-accelerated React/Node.js development for startups worldwide. Fixed pricing from €250. Money-back guarantee.`;
+  const description = `AI-powered web development agency building production-ready MVPs in 5 days. Fixed pricing from €200. Money-back guarantee. Fast, affordable, expert-driven development for startups.`;
 
   return (
     <div>
@@ -102,13 +102,67 @@ const HomePage: React.FC = () => {
               addressCountry: 'SI',
               addressLocality: 'Ljubljana'
             },
-            priceRange: '€250-€1100',
+            priceRange: '€200-€2200',
             serviceType: ['Web Development', 'MVP Development', 'Web Application Development', 'AI Integration', 'E-commerce Development'],
             aggregateRating: {
               '@type': 'AggregateRating',
               ratingValue: '4.9',
               reviewCount: '47'
             }
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How can you build an MVP in just 5 days?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'We use AI automation for repetitive tasks (code generation, testing, deployment) while expert developers handle architecture, design decisions, and quality control. This hybrid approach compresses months of work into days without sacrificing quality.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: "What's included in the money-back guarantee?",
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: "If we don't deliver your production-ready MVP within 5 days, you get 100% of your money back. No questions asked. We're that confident in our process."
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you use templates or build from scratch?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Every project is custom-built to your specifications. No templates. We use modern frameworks (React, Node.js) and best practices, with AI handling boilerplate while humans craft the unique features.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What happens after the 5 days?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'You get the complete source code, documentation, and deployment access. Pro and Scale packages include 1 month of free updates. After that, you can maintain it yourself or choose our ongoing support plans.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Can you integrate with my existing systems?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. We can integrate with APIs, databases, payment processors, and third-party services. Just let us know your requirements during the strategy session.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What if I need changes after delivery?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Each package includes revision rounds (1-3 depending on tier). After those, Pro and Scale packages get 1 month free updates. Additional changes are billed at €50/hour or you can upgrade to a support plan.'
+                }
+              }
+            ]
           }
         ]}
       />
@@ -436,6 +490,101 @@ const HomePage: React.FC = () => {
           <ScrollReveal className="text-center mt-12">
             <Button to="/plans" variant="secondary" style={{ borderColor: '#0E5F63' }}>
               {t('home.pricing.viewAll')}
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-4xl mx-auto px-6 md:px-10">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tighter mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-text-active/70">
+              Everything you need to know about our AI-powered development
+            </p>
+          </ScrollReveal>
+
+          <div className="space-y-4">
+            <ScrollReveal delay={0.1}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  How can you build an MVP in just 5 days?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  We use AI automation for repetitive tasks (code generation, testing, deployment) while expert developers handle architecture, design decisions, and quality control. This hybrid approach compresses months of work into days without sacrificing quality.
+                </div>
+              </details>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  What's included in the money-back guarantee?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  If we don't deliver your production-ready MVP within 5 days, you get 100% of your money back. No questions asked. We're that confident in our process.
+                </div>
+              </details>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  Do you use templates or build from scratch?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  Every project is custom-built to your specifications. No templates. We use modern frameworks (React, Node.js) and best practices, with AI handling boilerplate while humans craft the unique features.
+                </div>
+              </details>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.4}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  What happens after the 5 days?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  You get the complete source code, documentation, and deployment access. Pro and Scale packages include 1 month of free updates. After that, you can maintain it yourself or choose our ongoing support plans.
+                </div>
+              </details>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.5}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  Can you integrate with my existing systems?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  Yes. We can integrate with APIs, databases, payment processors, and third-party services. Just let us know your requirements during the strategy session.
+                </div>
+              </details>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.6}>
+              <details className="group bg-white rounded-xl p-6 shadow-sm border border-line">
+                <summary className="flex justify-between items-center cursor-pointer list-none font-semibold text-lg">
+                  What if I need changes after delivery?
+                  <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="mt-4 text-text-active/80 leading-relaxed">
+                  Each package includes revision rounds (1-3 depending on tier). After those, Pro and Scale packages get 1 month free updates. Additional changes are billed at €50/hour or you can upgrade to a support plan.
+                </div>
+              </details>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal className="text-center mt-12">
+            <p className="text-text-active/70 mb-6">Still have questions?</p>
+            <Button to="/contact" variant="navbar">
+              Get a 15-min Strategy Session
             </Button>
           </ScrollReveal>
         </div>

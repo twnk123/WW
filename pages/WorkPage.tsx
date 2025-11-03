@@ -26,8 +26,8 @@ const WorkPage: React.FC = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       <Seo
-        title={`Web Design Portfolio & Case Studies — WHITEWEAVER Studio`}
-        description={t('work.subtitle')}
+        title={`Web Development Portfolio | AI-Built MVPs & Case Studies | WHITEWEAVER`}
+        description={`View our portfolio of AI-built websites and MVPs. Real case studies from €200-€2,200 packages. Coffee shops, gyms, e-commerce, fashion brands. See what's possible.`}
         canonical="/work"
         alternates={[
           { hrefLang: 'en', href: '/work' },

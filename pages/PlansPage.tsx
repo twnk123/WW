@@ -48,8 +48,8 @@ const PlansPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-bg overflow-hidden">
             <Seo
-                title={`MVP Pricing from €250 | Startup Packages | WHITEWEAVER`}
-                description={`Transparent web development pricing for startups. Fixed packages from €250 to €1,100. React, Node.js, e-commerce. Money-back guarantee.`}
+                title={`Web Development Pricing | MVP Packages from €200 | WHITEWEAVER`}
+                description={`Transparent, fixed-price web development for startups. Packages from €200-€2,200. MVP, e-commerce, custom apps. 5-day delivery. Money-back guarantee. No hidden fees.`}
                 canonical="/plans"
                 type="product"
                 alternates={[
