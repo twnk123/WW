@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Playwright MCP
+.playwright-mcp/
+
+# Local documentation and notes
+google.txt
+BRANDING_UPDATE.md
+DEPLOYMENT_STATUS.md
+SCROLL_DEMO.tsx
+SCROLL_FEATURES.md
+SCROLL_QUICK_REFERENCE.md
+SCROLL_SUMMARY.md
+DIRECTORY_SUBMISSION_KIT.md
+GUEST_POST_OUTREACH_KIT.md
+MOBILE_OPTIMIZATION_REPORT.md
+RADAR_IMPLEMENTATION_PLAN.md
+R.A.D.A.R. protocol.txt
+.clauderules
+tactiq-free-transcript-*.txt
+*.docx
+~$*.docx
+Privacy.txt
+Terms.txt
+metadata.json
+MASSIVE_BACKLINK_STRATEGY.md
+BACKLINK_STRATEGY_SUMMARY.md
+DATES_FIXED_SUMMARY.md
+platform_posts_for_backlinks.md
+articles-outreach/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# OS-specific files
+Thumbs.db
+Desktop.ini

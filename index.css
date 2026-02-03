@@ -1,0 +1,40 @@
+/* Invert-colors mode: invert UI but re-invert imagery */
+html.invert-colors {
+  filter: invert(1) hue-rotate(180deg);
+}
+html.invert-colors img,
+html.invert-colors video,
+html.invert-colors picture,
+html.invert-colors canvas,
+html.invert-colors svg {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Keep #0E5F63 color consistent in invert mode - re-invert to original */
+html.invert-colors .keep-color-invert {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+html.invert-colors .bg-\[\#0E5F63\] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 100s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content {
+    animation: none;
+  }
+}
